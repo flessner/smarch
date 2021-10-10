@@ -1,0 +1,9 @@
+{
+  "name": "trauben-ui",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "dependencies": {
+    "svelte": "^3.42.6",
+    "typed.js": "^2.0.12"
+  }
+}

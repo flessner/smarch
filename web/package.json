@@ -1,0 +1,22 @@
+{
+  "name": "sveltekit-pokedex-app",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev --host",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write --plugin-search-dir=. ."
+  },
+  "type": "module",
+  "devDependencies": {
+    "@sveltejs/kit": "next",
+    "autoprefixer": "^10.2.6",
+    "svelte": "^3.34.0",
+    "tailwindcss": "^2.1.4",
+    "trauben-ui": "file:../trauben-ui"
+  },
+  "dependencies": {
+    "typed.js": "^2.0.12"
+  }
+}
