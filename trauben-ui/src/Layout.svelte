@@ -18,6 +18,6 @@
   export { className as class };
 </script>
 
-<div class="{css} mx-auto px-4 md:px-8 {className}">
+<div class="{css} mx-auto px-6 lg:px-8 {className}">
   <slot />
 </div>

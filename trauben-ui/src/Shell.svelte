@@ -80,11 +80,17 @@
     {#if side || dynamic || rail}
       {#if rail}<div class="w-12 xl:w-0" />{/if}
       <div
-        class="{sidebarCss} absolute xl:relative z-20 h-full flex-shrink-0 bg-white border-r border-uil-skirt duration-200"
+        class="{sidebarCss} absolute xl:relative z-20 h-full flex-shrink-0 bg-white border-r border-uil-skirt duration-200 overflow-x-hidden"
       >
-        {#each links as link}
-          <SidebarLink href={link.href} label={link.label} />
-        {/each}
+        <div class="py-4">
+          {#each links as link}
+            <SidebarLink href={link.href} icon={link.icon} label={link.label}>
+              {#each link.links as sub}
+                <SidebarLink href={sub.href} label={sub.label} />
+              {/each}
+            </SidebarLink>
+          {/each}
+        </div>
         <slot name="sidebar" />
       </div>
     {/if}

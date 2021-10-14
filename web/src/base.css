@@ -15,10 +15,10 @@
     @apply tracking-normal;
   }
   h1 {
-    @apply text-4xl;
-    @apply lg:text-5xl;
-    @apply 2xl:text-6xl;
-    @apply font-semibold;
+    @apply text-5xl;
+    @apply lg:text-6xl;
+    @apply 2xl:text-7xl;
+    @apply font-light;
   }
   h2 {
     @apply pt-12;

@@ -7,9 +7,9 @@
 
 {#if simple}
   <div class="bg-black mb-12">
-    <div class="w-full h-56 md:h-72">
+    <div class="w-full h-72">
       <Layout class="relative h-full">
-        <h1 class="absolute bottom-2 md:bottom-4 lg:bottom-6 mt-auto text-uil">
+        <h1 class="absolute bottom-12 mt-auto text-uil">
           {title}
         </h1>
       </Layout>
