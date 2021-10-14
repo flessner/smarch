@@ -10,13 +10,15 @@
   },
   "type": "module",
   "devDependencies": {
+    "@sveltejs/adapter-cloudflare-workers": "^1.0.0-next.23",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.2.6",
+    "carbon-icons-svelte": "^10.38.0",
     "svelte": "^3.34.0",
     "tailwindcss": "^2.1.4",
     "trauben-ui": "file:../trauben-ui"
   },
   "dependencies": {
-    "typed.js": "^2.0.12"
+    "@self.id/web": "^0.1.0"
   }
 }

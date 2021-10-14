@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "src/main.js",
   "dependencies": {
-    "svelte": "^3.42.6",
-    "typed.js": "^2.0.12"
+    "svelte": "^3.42.6"
+  },
+  "devDependencies": {
+    "carbon-icons-svelte": "^10.38.0"
   }
 }

@@ -1,18 +1,14 @@
 <script>
-  import "../base.css";
+  import "../../base.css";
   import { Shell, HeaderUtility } from "trauben-ui";
-  import { login, logout, self } from "../store";
-  import User20 from "carbon-icons-svelte/lib/User20";
+  import { login, logout, self } from "../../store";
+  import Menu20 from "carbon-icons-svelte/lib/Menu20";
   import Login20 from "carbon-icons-svelte/lib/Login20";
 
   let links = [
     {
-      label: "Cloud",
+      label: "Ceramic CMS",
       href: "/cloud",
-    },
-    {
-      label: "Contact",
-      href: "/contact",
     },
   ];
 </script>
@@ -21,11 +17,11 @@
   <title>SMARCH</title>
 </svelte:head>
 
-<Shell {links} company="SMARCH">
+<Shell rail {links} company="SMARCH" product="Cloud">
+  <HeaderUtility icon={Menu20} onClick={login} />
   {#if !$self}
     <HeaderUtility primary icon={Login20} onClick={login} />
   {:else}
-    <HeaderUtility href="/account" icon={User20} />
     <HeaderUtility danger icon={Login20} onClick={logout} />
   {/if}
   <slot slot="content" />

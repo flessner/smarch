@@ -1,21 +1,10 @@
 /** @type {import('@sveltejs/kit').Config} */
+import adapter from '@sveltejs/adapter-cloudflare-workers';
 
 const config = {
   kit: {
-    amp: false,
     target: '#svelte',
-    hydrate: true,
-    prerender: {
-      crawl: true,
-      enabled: true,
-      entries: ['*'],
-      onError: 'fail'
-    },
-    router: true,
-    ssr: true,
-    vite: () => ({
-
-    })
+    adapter: adapter()
   }
 };
 
