@@ -1,5 +1,5 @@
 <script>
-  import { Layout, Title } from "trauben-ui";
+  import { Layout, Title } from "carbon-ui";
 </script>
 
 <Title simple title="Smarch Cloud" />

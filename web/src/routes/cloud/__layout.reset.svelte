@@ -1,7 +1,7 @@
 <script>
-  import "../../base.css";
-  import { Shell, HeaderUtility } from "trauben-ui";
-  import { login, logout, self } from "../../store";
+  import "carbon-ui/smarch.css";
+  import { Shell, HeaderUtility } from "carbon-ui";
+  import { login, logout, self } from "$lib/store";
   import GroupResource16 from "carbon-icons-svelte/lib/GroupResource16";
   import ModelAlt16 from "carbon-icons-svelte/lib/ModelAlt16";
   import Login20 from "carbon-icons-svelte/lib/Login20";

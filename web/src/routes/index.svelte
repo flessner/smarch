@@ -1,5 +1,5 @@
 <script>
-  import { Title, Layout } from "trauben-ui";
+  import { Title, Layout } from "carbon-ui";
 </script>
 
 <Title simple title="Smarch" />
@@ -9,4 +9,5 @@
   <h3>Heading 3</h3>
   <h4>Heading 4</h4>
   <h5>Heading 5</h5>
+  <p>Lorem ipsum</p>
 </Layout>

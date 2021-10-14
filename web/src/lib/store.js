@@ -1,3 +1,4 @@
+
 import { EthereumAuthProvider, SelfID } from '@self.id/web'
 import { writable, get, derived } from 'svelte/store';
 

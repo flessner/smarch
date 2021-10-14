@@ -1,6 +1,6 @@
 <script>
-  import { Title } from "trauben-ui";
-  import { self, did } from "../store";
+  import { Title } from "carbon-ui";
+  import { self, did } from "$lib/store";
 </script>
 
 {#if $self}

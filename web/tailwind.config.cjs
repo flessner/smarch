@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{js,svelte}', './node_modules/trauben-ui/**/*.{js,svelte}'],
+  purge: ['./public/**/*.html', './src/**/*.{js,svelte}', './node_modules/carbon-ui/**/*.{js,svelte}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
