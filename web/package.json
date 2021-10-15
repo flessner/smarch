@@ -1,23 +1,30 @@
 {
-  "name": "sveltekit-pokedex-app",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "svelte-kit dev --host",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
-    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. ."
-  },
-  "type": "module",
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "license": "MIT",
   "devDependencies": {
-    "@sveltejs/kit": "next",
-    "@sveltejs/adapter-static": "^1.0.0-next.21",
-    "autoprefixer": "^10.2.6",
-    "carbon-icons-svelte": "^10.38.0",
-    "carbon-ui": "file:../carbon-ui",
-    "svelte": "^3.34.0",
-    "tailwindcss": "^2.1.4",
-    "@self.id/web": "^0.1.0"
+    "autoprefixer": "^10.2.5",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.0",
+    "mini-css-extract-plugin": "^1.4.0",
+    "postcss": "^8.2.9",
+    "postcss-import": "^14.0.2",
+    "postcss-load-config": "^3.0.1",
+    "postcss-loader": "^4.2.0",
+    "postcss-url": "^10.1.3",
+    "svelte": "3.37.0",
+    "svelte-loader": "^3.1.0",
+    "svelte-preprocess": "^4.7.0",
+    "tailwindcss": "^2.1.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^4.3.1"
   },
-  "dependencies": {}
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "webpack serve"
+  },
+  "dependencies": {
+    "carbon-ui": "file:../carbon-ui"
+  }
 }
