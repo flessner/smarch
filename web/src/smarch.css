@@ -10,12 +10,16 @@
     width: 0px;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, p, a {
     @apply text-uid;
     @apply tracking-normal;
   }
   h2, h3, h4, h5 {
     @apply pb-2;
+  }
+  p, a {
+    @apply text-base;
+    @apply font-normal;
   }
   h1 {
     @apply text-5xl;
@@ -49,9 +53,5 @@
   }
   a {
     @apply text-primary;
-  }
-  p {
-    @apply text-base;
-    @apply font-normal;
   }
 }

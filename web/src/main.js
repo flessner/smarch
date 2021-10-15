@@ -1,3 +1,8 @@
-import App from './app.svelte';
+import App from './App.svelte';
 
-new App({ target: document.body });
+const app = new App({
+  target: document.body
+});
+
+window.app = app;
+export default app;

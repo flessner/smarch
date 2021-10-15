@@ -6,8 +6,13 @@ const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 module.exports = {
+  devtool: 'source-map',
   entry: {
     'bundle': './src/main.js'
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     alias: {
@@ -15,11 +20,6 @@ module.exports = {
     },
     extensions: ['.mjs', '.js', '.svelte'],
     mainFields: ['svelte', 'browser', 'module', 'main']
-  },
-  output: {
-    path: __dirname + '/public',
-    filename: '[name].js',
-    chunkFilename: '[name].[id].js'
   },
   module: {
     rules: [
@@ -65,15 +65,15 @@ module.exports = {
   mode: prod ? 'production' : 'development',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: 'bundle.css'
     })
   ],
-  devtool: prod ? false : 'source-map',
   devServer: {
     hot: true,
     static: {
       directory: path.join(__dirname, 'public'),
     },
     port: 8000,
+    historyApiFallback: true
   }
 };

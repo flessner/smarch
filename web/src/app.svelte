@@ -1,13 +1,7 @@
 <script>
   import "./smarch.css";
-  import { Shell, Title, Layout } from "carbon-ui";
+  import { Router } from "@roxi/routify";
+  import { routes } from "../.routify/routes";
 </script>
 
-<Shell company="SMARCH">
-  <div slot="content">
-    <Title simple title="Smarch is back" />
-    <Layout>
-      <h2>Waddup</h2>
-    </Layout>
-  </div>
-</Shell>
+<Router {routes} />

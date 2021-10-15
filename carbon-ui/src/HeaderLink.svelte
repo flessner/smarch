@@ -4,9 +4,7 @@
 </script>
 
 <a {href}>
-  <div
-    class="h-12 px-4 select-none hover:bg-uid-pick text-uil-pick hover:text-uil flex flex-col"
-  >
-    <p class="my-auto text-sm">{label}</p>
+  <div class="h-12 px-4 select-none hover:bg-uid-pick flex flex-col">
+    <p class="my-auto text-sm text-uil-pick hover:text-uil">{label}</p>
   </div>
 </a>

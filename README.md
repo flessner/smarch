@@ -1,6 +1,5 @@
-# [smarch.](smarch.net) - Future and Stuff
+# [SMARCH](smarch.net) - Experimenting with web3
 
-## Stuf
-The main website can be found under `./web`.
-
-Also there are some Svelte Components under `./trauben-ui`.
+## Content
+- The main website: `./web`.
+- Carbon Design System in Tailwind `./carbon-ui`.

@@ -57,7 +57,7 @@
         <!-- LOGO -->
         <a {href} class="w-full text-uil hover:bg-uid-pick">
           <div class="px-4 h-12 flex flex-col justify-center">
-            <p class="text-sm select-none">
+            <p class="text-base select-none text-uil">
               {company} <span class="font-bold">{product}</span>
             </p>
           </div>

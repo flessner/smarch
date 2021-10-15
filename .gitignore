@@ -1,7 +1,4 @@
 .DS_Store
 node_modules
 dist
-
-web/src/generated_routes
-public/**
-!public/index.html
+.routify
