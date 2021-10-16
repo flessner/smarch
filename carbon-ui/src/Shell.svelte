@@ -39,13 +39,13 @@
 
 <Column class="h-screen w-full">
   <!-- HEADER -->
-  <Row class="justify-between relative z-30 bg-uid border-b border-primary">
+  <Row class="justify-between relative z-30 bg-black border-b border-uid-skirt">
     <!-- UTILITIES -->
-    <Row class="absolute top-0 h-12 w-full justify-end">
+    <Row class="absolute top-0 h-16 w-full justify-end">
       <slot />
     </Row>
     <Column class="md:flex-row relative">
-      <Row class="h-12 flex-shrink-0">
+      <Row class="h-16 flex-shrink-0">
         <!-- BURGER -->
         {#if side || dynamic || rail}
           {#if !navOpen}
@@ -55,10 +55,11 @@
           {/if}
         {/if}
         <!-- LOGO -->
-        <a {href} class="w-full text-uil hover:bg-uid-pick">
-          <div class="px-8 h-12 flex flex-col justify-center">
-            <p class="text-base select-none text-uil font-bold">
-              {company} <span class="font-thin">{product}</span>
+        <a {href} class="w-full">
+          <div class="px-8 h-16 flex flex-col justify-center">
+            <p class="text-xl select-none font-bold">
+              <span class="text-white">{company}</span>
+              <span class="font-thin">{product}</span>
             </p>
           </div>
         </a>
@@ -80,7 +81,7 @@
     {#if side || dynamic || rail}
       {#if rail}<div class="w-12 xl:w-0" />{/if}
       <div
-        class="{sidebarCss} absolute xl:relative flex-shrink-0 z-20 h-full bg-white dark:bg-uid border-r border-uil-skirt dark:border-uid-skirt duration-200 overflow-hidden"
+        class="{sidebarCss} absolute xl:relative flex-shrink-0 z-20 h-full bg-uil dark:bg-uid border-r border-uil-skirt dark:border-uid-skirt duration-200 overflow-hidden"
       >
         <div class="py-4">
           {#each links as link}
@@ -97,7 +98,7 @@
     <!-- CONTENT -->
     <div
       id="content"
-      class="w-full h-full overflow-y-scroll bg-uil dark:bg-uid"
+      class="w-full h-full overflow-y-scroll bg-white dark:bg-black"
     >
       <slot name="content" />
     </div>

@@ -10,17 +10,15 @@ module.exports = {
       'mono': ["Source Code Pro", "monospace"]
     },
     colors: {
-      black: "#000",
+      black: "#000408",
       white: "#FFF",
       uil: {
-        DEFAULT: "#f4f4f4",
-        pick: "#c6c6c6",
-        skirt: "#e0e0e0",
+        DEFAULT: "#e0f0ff",
+        skirt: "#b0d0ff",
       },
       uid: {
-        DEFAULT: "#161616",
-        pick: "#292929",
-        skirt: "#393939",
+        DEFAULT: "#001020",
+        skirt: "#002448",
       },
       primary: {
         DEFAULT: "#0f62fe",

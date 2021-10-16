@@ -1,4 +1,5 @@
 <script>
+  import "./pattern.css";
   import "./smarch.css";
   import { Router } from "@roxi/routify";
   import { routes } from "../.routify/routes";

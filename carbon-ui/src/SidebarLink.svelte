@@ -11,7 +11,7 @@
 
   let selectedCss;
   if (selected) {
-    selectedCss = "bg-uil-pick text-uid";
+    selectedCss = "text-uid";
   }
 
   let menuOpen = false;
@@ -25,16 +25,12 @@
 
 <div>
   <a {href} on:click={toggleMenu}>
-    <div
-      class="{selectedCss} h-8 w-64 relative hover:bg-uil-pick dark:hover:bg-uid-pick cursor-pointer"
-    >
+    <div class="{selectedCss} h-8 w-64 relative cursor-pointer">
       {#if selected}
         <div class="absolute left-0 w-1 h-full bg-primary" />
       {/if}
       {#if menuOpen}
-        <div
-          class="absolute left-0 w-1 h-full bg-uil-skirt dark:bg-uid-skirt"
-        />
+        <div class="absolute left-0 w-1 h-full bg-uid-skirt" />
       {/if}
       <Row>
         <svelte:component
@@ -63,7 +59,7 @@
     </div>
   </a>
   {#if menuOpen}
-    <div class="pl-6 ml-6 border-l border-uil-skirt dark:border-uid-skirt mb-2">
+    <div class="pl-6 ml-6 border-l border-uid-skirt mb-2">
       <slot />
     </div>
   {/if}

@@ -39,11 +39,12 @@
     <HeaderUtility icon={Logout20} onClick={logout} />
   {/if}
   <div slot="content">
-    <div class="h-12 w-full bg-uil dark:bg-uid border-b border-danger">
-      <Layout class="pt-3">
-        <p class="flex">
-          <WarningFilled20 class="mt-1 mr-2 text-danger" />
+    <div class="w-full bg-danger">
+      <Layout class="py-2">
+        <p class="flex text-uil">
+          <WarningFilled20 class="mt-1 mr-2 flex-shrink-0" />
           Current services are only for testing and shouldn't be used in Production.
+          (Clay Testnet)
         </p>
       </Layout>
     </div>

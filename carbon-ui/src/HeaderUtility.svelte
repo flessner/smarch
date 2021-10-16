@@ -11,13 +11,13 @@
   } else if (danger) {
     css = "bg-danger hover:bg-danger-pick";
   } else {
-    css = "hover:bg-uid-pick";
+    css = "hover:bg-uid";
   }
 </script>
 
 <a {href}>
   <div
-    class="w-12 h-full max-h-12 text-uil cursor-pointer {css}"
+    class="w-16 h-full max-h-16 text-uil cursor-pointer {css}"
     on:click={onClick}
   >
     <svelte:component this={icon} class="mx-auto h-full" />
