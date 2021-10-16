@@ -6,18 +6,22 @@
   let css = "";
   if (full) {
     css = "w-full";
-  } else if (narrow) {
-    css = "max-w-3xl";
   } else if (wide) {
-    css = "max-w-7xl";
+    css = "max-w-7xl mx-auto";
   } else {
-    css = "max-w-5xl";
+    css = "max-w-5xl mx-auto";
   }
 
   let className = "";
   export { className as class };
 </script>
 
-<div class="{css} mx-auto px-6 lg:px-8 {className}">
-  <slot />
+<div class="{css} px-6 lg:px-8 {className}">
+  {#if narrow}
+    <div class="max-w-2xl ml-0 mr-auto">
+      <slot />
+    </div>
+  {:else}
+    <slot />
+  {/if}
 </div>

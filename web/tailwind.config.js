@@ -3,11 +3,11 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   mode: 'jit',
   purge: ['./public/**/*.html', './src/**/*.{js,svelte}', './node_modules/carbon-ui/**/*.{js,svelte}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'sans': ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"],
-      'mono': ["IBM Plex Mono"]
+      'sans': ["Source Sans Pro", "Helvetica Neue", "Arial", "sans-serif"],
+      'mono': ["Source Code Pro", "monospace"]
     },
     colors: {
       black: "#000",
@@ -22,14 +22,6 @@ module.exports = {
         pick: "#292929",
         skirt: "#393939",
       },
-      //ui: {
-      //  1: "#f4f4f4",
-      //  3: "#c6c6c6",
-      //  4: "#8d8d8d",
-      //  6: "#6f6f6f",
-      //  7: "#393939",
-      //  8: "#292929",
-      //},
       primary: {
         DEFAULT: "#0f62fe",
         pick: "#0353e9"

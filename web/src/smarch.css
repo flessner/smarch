@@ -1,21 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  *::-webkit-scrollbar {
-    width: 0px;
-  }
 
-  h1, h2, h3, h4, h5, p, a {
+  h1, h2, h3, h4, h5, p, a, blockquote {
     @apply text-uid;
+    @apply dark:text-uil;
     @apply tracking-normal;
-  }
-  h2, h3, h4, h5 {
-    @apply pb-2;
   }
   p, a {
     @apply text-base;
@@ -25,33 +20,48 @@
     @apply text-5xl;
     @apply lg:text-6xl;
     @apply 2xl:text-7xl;
-    @apply font-light;
+    @apply font-bold;
   }
   h2 {
+    @apply pb-4;
     @apply pt-12;
-    @apply text-4xl;
-    @apply lg:text-5xl;
-    @apply font-light;
-  }
-  h3 {
-    @apply pt-8;
     @apply text-3xl;
     @apply lg:text-4xl;
-    @apply font-light;
+    @apply font-normal;
   }
-  h4 {
-    @apply pt-6;
+  h3 {
+    @apply pb-2;
+    @apply pt-8;
     @apply text-2xl;
     @apply lg:text-3xl;
-    @apply font-light;
+    @apply font-normal;
   }
-  h5 {
-    @apply pt-4;
+  h4 {
+    @apply pb-2;
+    @apply pt-8;
     @apply text-xl;
     @apply lg:text-2xl;
-    @apply font-light;
+    @apply font-normal;
+  }
+  h5 {
+    @apply pb-2;
+    @apply pt-6;
+    @apply text-xl;
+    @apply lg:text-2xl;
+    @apply font-normal;
+  }
+  p {
+    @apply text-lg;
+    @apply font-normal;
   }
   a {
     @apply text-primary;
+    @apply font-normal;
+  }
+  blockquote {
+    @apply text-2xl;
+    @apply py-6;
+    @apply md:w-2/3;
+    @apply font-normal;
   }
 }

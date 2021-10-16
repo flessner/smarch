@@ -1,12 +1,13 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const sveltePreprocess = require('svelte-preprocess');
+
 const path = require('path');
 
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'eval',
   entry: {
     'bundle': './src/main.js'
   },
@@ -24,7 +25,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.svelte$/,
+        test: /\.(svelte|html)$/,
         use: [
           {
             loader: 'svelte-loader',
@@ -50,8 +51,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource'
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
       {
         // required to prevent errors from Svelte on Webpack 5+

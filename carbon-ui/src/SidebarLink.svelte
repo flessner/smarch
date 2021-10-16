@@ -19,7 +19,6 @@
   function toggleMenu() {
     if (!href) {
       menuOpen = !menuOpen;
-      console.log(menuOpen);
     }
   }
 </script>
@@ -27,23 +26,36 @@
 <div>
   <a {href} on:click={toggleMenu}>
     <div
-      class="{selectedCss} h-8 w-64 relative hover:bg-uil-pick text-uid-skirt hover:text-uid cursor-pointer"
+      class="{selectedCss} h-8 w-64 relative hover:bg-uil-pick dark:hover:bg-uid-pick cursor-pointer"
     >
       {#if selected}
         <div class="absolute left-0 w-1 h-full bg-primary" />
       {/if}
       {#if menuOpen}
-        <div class="absolute left-0 w-1 h-full bg-uid-skirt" />
+        <div
+          class="absolute left-0 w-1 h-full bg-uil-skirt dark:bg-uid-skirt"
+        />
       {/if}
       <Row>
-        <svelte:component this={icon} class="w-12 mt-2 pl-1" />
+        <svelte:component
+          this={icon}
+          class="w-12 h-6 mt-1 pl-1.5 text-uid dark:text-uil"
+        />
         <Row class="justify-between w-full">
-          <p class="pt-1 pl-2 select-none">{label}</p>
+          <p class="pt-1 pl-2 select-none">
+            {label}
+          </p>
           {#if !href}
             {#if !menuOpen}
-              <svelte:component this={ChevronDown16} class="w-12 mt-2" />
+              <svelte:component
+                this={ChevronDown16}
+                class="w-12 mt-2 text-uid dark:text-uil"
+              />
             {:else}
-              <svelte:component this={ChevronUp16} class="w-12 mt-2" />
+              <svelte:component
+                this={ChevronUp16}
+                class="w-12 mt-2 text-uid dark:text-uil"
+              />
             {/if}
           {/if}
         </Row>
@@ -51,7 +63,7 @@
     </div>
   </a>
   {#if menuOpen}
-    <div class="pl-6 ml-6 border-l border-uid-skirt mb-2">
+    <div class="pl-6 ml-6 border-l border-uil-skirt dark:border-uid-skirt mb-2">
       <slot />
     </div>
   {/if}
