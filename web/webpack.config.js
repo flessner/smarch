@@ -7,13 +7,13 @@ const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: {
     'bundle': './src/main.js'
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'public')
   },
   resolve: {
     alias: {

@@ -10,7 +10,7 @@
 </script>
 
 <Shell {links} company="smarch">
-  <div slot="content pb-10">
+  <div slot="content" class="pb-10">
     <Title simple title="Experimenting with Web3" />
     <Layout>
       <blockquote>
