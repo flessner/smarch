@@ -10,7 +10,8 @@ import HeaderUtility from './HeaderUtility.svelte'
 import SidebarLink from './SidebarLink.svelte'
 
 import Title from './Title.svelte'
+import Remark from './Remark.svelte'
 
 export {
-  Column, HeaderLink, HeaderUtility, Layout, Row, Shell, SidebarLink, Title
+  Column, HeaderLink, HeaderUtility, Layout, Row, Shell, SidebarLink, Title, Remark
 };

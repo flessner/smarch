@@ -7,61 +7,41 @@
 
 @layer base {
 
-  h1, h2, h3, h4, h5, p, a, blockquote {
-    @apply text-uid;
-    @apply dark:text-uil;
-    @apply tracking-normal;
+  h1, h2, h3{
+    @apply text-ui-l0;
   }
   p, a {
-    @apply text-base;
-    @apply font-normal;
-  }
-  h1 {
-    @apply text-5xl;
-    @apply lg:text-6xl;
-    @apply 2xl:text-7xl;
-    @apply font-bold;
-  }
-  h2 {
-    @apply pb-4;
-    @apply pt-12;
-    @apply text-3xl;
-    @apply lg:text-4xl;
-    @apply font-normal;
-  }
-  h3 {
-    @apply pb-2;
-    @apply pt-8;
-    @apply text-2xl;
-    @apply lg:text-3xl;
-    @apply font-normal;
-  }
-  h4 {
-    @apply pb-2;
-    @apply pt-8;
-    @apply text-xl;
-    @apply lg:text-2xl;
-    @apply font-normal;
-  }
-  h5 {
-    @apply pb-2;
-    @apply pt-6;
-    @apply text-xl;
-    @apply lg:text-2xl;
-    @apply font-normal;
-  }
-  p {
     @apply text-lg;
-    @apply font-normal;
+    @apply text-ui-l1;
   }
   a {
     @apply text-primary;
-    @apply font-normal;
   }
   blockquote {
-    @apply text-2xl;
+    @apply text-lg;
+    @apply font-semibold;
+    @apply font-mono;
     @apply py-6;
-    @apply md:w-2/3;
-    @apply font-normal;
+    @apply text-ui-l1;
+  }
+  h1 {
+    @apply text-5xl;
+    @apply lg:text-5xl;
+    @apply 2xl:text-6xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply pb-6;
+    @apply pt-12;
+    @apply text-3xl;
+    @apply lg:text-4xl;
+    @apply font-semibold;
+  }
+  h3 {
+    @apply pb-4;
+    @apply pt-8;
+    @apply text-2xl;
+    @apply lg:text-3xl;
+    @apply font-semibold;
   }
 }

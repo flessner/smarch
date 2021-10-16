@@ -7,11 +7,11 @@
 
 {#if simple}
   <div
-    class="bg-black mb-12 pattern-dots-xl text-uid border-b border-uid-skirt"
+    class="bg-ui-d1 mb-12 pattern-dots-xl text-ui-d2 border-b border-ui-d2 overflow-hidden"
   >
     <div class="w-full h-72">
       <Layout class="relative h-full">
-        <h1 class="absolute bottom-12 mt-auto text-uil">
+        <h1 class="absolute bottom-12 mt-auto">
           {title}
         </h1>
       </Layout>

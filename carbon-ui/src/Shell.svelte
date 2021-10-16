@@ -6,8 +6,8 @@
     Row,
     Column,
   } from "./main.js";
-  import Menu20 from "carbon-icons-svelte/lib/Menu20";
-  import Close20 from "carbon-icons-svelte/lib/Close20";
+  import Menu20 from "carbon-icons-svelte/lib/Menu24";
+  import Close20 from "carbon-icons-svelte/lib/Close24";
 
   export let company;
   export let product = "";
@@ -39,7 +39,7 @@
 
 <Column class="h-screen w-full">
   <!-- HEADER -->
-  <Row class="justify-between relative z-30 bg-black border-b border-uid-skirt">
+  <Row class="justify-between relative z-30 bg-ui-d0 border-b border-ui-d2">
     <!-- UTILITIES -->
     <Row class="absolute top-0 h-16 w-full justify-end">
       <slot />
@@ -56,9 +56,9 @@
         {/if}
         <!-- LOGO -->
         <a {href} class="w-full">
-          <div class="px-8 h-16 flex flex-col justify-center">
-            <p class="text-xl select-none font-bold">
-              <span class="text-white">{company}</span>
+          <div class="px-6 h-16 flex flex-col justify-center">
+            <p class="text-xl select-none">
+              <span class="font-bold text-ui-l0">{company}</span>
               <span class="font-thin">{product}</span>
             </p>
           </div>
@@ -81,7 +81,7 @@
     {#if side || dynamic || rail}
       {#if rail}<div class="w-12 xl:w-0" />{/if}
       <div
-        class="{sidebarCss} absolute xl:relative flex-shrink-0 z-20 h-full bg-uil dark:bg-uid border-r border-uil-skirt dark:border-uid-skirt duration-200 overflow-hidden"
+        class="{sidebarCss} absolute xl:relative flex-shrink-0 z-20 h-full bg-ui-d1 border-r border-ui-d2 duration-200 overflow-hidden"
       >
         <div class="py-4">
           {#each links as link}
@@ -96,10 +96,7 @@
       </div>
     {/if}
     <!-- CONTENT -->
-    <div
-      id="content"
-      class="w-full h-full overflow-y-scroll bg-white dark:bg-black"
-    >
+    <div id="content" class="w-full h-full bg-ui-d0 overflow-y-scroll bg-white">
       <slot name="content" />
     </div>
   </Row>

@@ -1,16 +1,6 @@
 import { EthereumAuthProvider, SelfID } from '@self.id/web'
 import { writable, get, derived } from 'svelte/store';
 
-// DARK MODE
-const localMode = localStorage.darkMode
-console.log(localMode)
-export const darkMode = writable(localMode == "true")
-darkMode.subscribe((val) => localStorage.darkMode = val)
-
-export function toggleDarkMode() {
-  darkMode.set(!get(darkMode))
-}
-
 // SELF STORE
 export const self = writable(undefined);
 

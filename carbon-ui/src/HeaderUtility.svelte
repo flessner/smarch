@@ -7,19 +7,16 @@
 
   let css = "";
   if (primary) {
-    css = "bg-primary hover:bg-primary-pick";
+    css = "bg-primary";
   } else if (danger) {
-    css = "bg-danger hover:bg-danger-pick";
+    css = "bg-danger";
   } else {
-    css = "hover:bg-uid";
+    css = "";
   }
 </script>
 
 <a {href}>
-  <div
-    class="w-16 h-full max-h-16 text-uil cursor-pointer {css}"
-    on:click={onClick}
-  >
-    <svelte:component this={icon} class="mx-auto h-full" />
+  <div class="w-16 h-full max-h-16 cursor-pointer {css}" on:click={onClick}>
+    <svelte:component this={icon} class="mx-auto h-full text-ui-l1" />
   </div>
 </a>
