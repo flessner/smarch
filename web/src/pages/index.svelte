@@ -1,5 +1,10 @@
 <script>
-  import { Shell, Title, Layout, HeaderUtility } from "carbon-ui";
+  import { metatags } from "@roxi/routify";
+  import { Shell, Title, Layout } from "carbon-ui";
+
+  metatags.title = "smarch Cloud";
+  metatags.description =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
 
   let links = [
     {
@@ -10,7 +15,7 @@
 </script>
 
 <Shell {links} company="smarch">
-  <div slot="content" class="pb-10">
+  <div slot="content">
     <Title simple title="Experimenting with Web3" />
     <Layout>
       <blockquote>

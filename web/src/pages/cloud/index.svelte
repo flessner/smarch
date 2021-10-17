@@ -1,5 +1,10 @@
 <script>
+  import { metatags } from "@roxi/routify";
   import { Title, Layout } from "carbon-ui";
+
+  metatags.title = "smarch Cloud";
+  metatags.description =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
 </script>
 
 <Title simple title="Cloud for Web3" />

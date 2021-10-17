@@ -1,11 +1,11 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const sveltePreprocess = require('svelte-preprocess');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const path = require('path');
 
 module.exports = {
-  devtool: false,
   entry: {
     'bundle': './src/main.js'
   },
@@ -54,5 +54,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       base: '/'
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'static',
+          to: ''
+        },
+      ]
+    })
   ]
 };
