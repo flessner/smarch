@@ -27,14 +27,13 @@
     "svelte-preprocess": "^4.7.0",
     "tailwindcss": "^2.1.0",
     "webpack": "^5.30.0",
-    "webpack-bundle-size-analyzer": "^3.1.0",
+    "webpack-bundle-analyzer": "^3.1.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^4.3.1",
-    "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
+    "webpack-merge": "^5.8.0",
     "carbon-ui": "file:../carbon-ui"
   },
+  "dependencies": {},
   "routify": {
     "extensions": "svelte,html,svx,md"
   }
