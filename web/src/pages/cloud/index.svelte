@@ -1,29 +1,11 @@
 <script>
-  import { metatags } from "@roxi/routify";
   import { Title, Layout } from "carbon-ui";
-
-  metatags.title = "smarch Cloud";
-  metatags.description =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
 </script>
 
-<Title simple title="Cloud for Web3" />
+<!-- routify:options title="Cloud for Web3" -->
+<!-- routify:options description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." -->
+
 <Layout narrow>
-  <blockquote>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a type specimen book. It has survived not only five centuries, but also
-    the leap into electronic typesetting, remaining essentially unchanged.
-  </blockquote>
   <h2>Heading 2</h2>
   <h3>Heading 3</h3>
-  <p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a type specimen book. It has survived not only five centuries, but also
-    the leap into electronic typesetting, remaining essentially unchanged.
-    <a href="/cloud">Cloud</a>
-  </p>
 </Layout>

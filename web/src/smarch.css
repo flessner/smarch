@@ -21,7 +21,7 @@
     @apply text-lg;
     @apply font-semibold;
     @apply font-mono;
-    @apply py-6;
+    @apply py-8;
     @apply text-ui-l1;
   }
   h1 {
