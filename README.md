@@ -1,4 +1,4 @@
-# [SMARCH](smarch.net) - Experimenting with web3
+# [SMARCH](https://smarch.flessner.workers.dev/) - Experimenting with web3
 
 ## Content
 - The main website: `./web`.
