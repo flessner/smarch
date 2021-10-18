@@ -4,15 +4,20 @@
 
   export let label = "";
   export let danger = false;
+
+  let css = "";
+  if (danger) {
+    css = "bg-danger";
+  } else {
+    css = "bg-ui-d1 border border-ui-d2";
+  }
 </script>
 
-{#if danger}
-  <div class="w-full bg-danger">
-    <Layout class="py-2">
-      <p class="flex text-ui-l0">
-        <WarningFilled20 class="mt-1 mr-2 flex-shrink-0" />
-        {label}
-      </p>
-    </Layout>
-  </div>
-{/if}
+<div class="{css} w-full">
+  <Layout class="py-2">
+    <p class="flex text-ui-l0">
+      <WarningFilled20 class="mt-1 mr-2 flex-shrink-0" />
+      {label}
+    </p>
+  </Layout>
+</div>

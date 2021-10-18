@@ -6,8 +6,7 @@
 @tailwind utilities;
 
 @layer base {
-
-  h1, h2, h3{
+  h1, h2, h3, h4{
     @apply text-ui-l0;
   }
   p, a {
@@ -21,8 +20,7 @@
     @apply text-lg;
     @apply font-semibold;
     @apply font-mono;
-    @apply py-8;
-    @apply text-ui-l1;
+    @apply text-ui-l2;
   }
   h1 {
     @apply text-5xl;
@@ -39,9 +37,41 @@
   }
   h3 {
     @apply pb-4;
-    @apply pt-8;
+    @apply pt-10;
     @apply text-2xl;
     @apply lg:text-3xl;
     @apply font-bold;
+  }
+  h4 {
+    @apply pb-4;
+    @apply pt-8;
+    @apply text-xl;
+    @apply lg:text-2xl;
+    @apply font-bold;
+  }
+
+  table {
+    @apply my-0;
+  }
+  th {
+    @apply text-ui-l0;
+    @apply font-semibold;
+    @apply text-left;
+    @apply px-4;
+  }
+  td {
+    @apply text-ui-l1;
+    @apply font-normal;
+    @apply px-4;
+    @apply m-0;
+  }
+
+  input {
+    @apply p-2;
+    @apply my-2;
+    @apply w-full;
+    @apply bg-ui-d0;
+    @apply text-ui-l1;
+    @apply outline-none;
   }
 }

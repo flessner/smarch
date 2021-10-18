@@ -18,6 +18,7 @@ module.exports = {
         l1: '#d0d0d0',
         l2: '#b0b0b0'
       },
+      black: "#000",
       primary: "#0f62fe",
       danger: "#da1e28",
     },

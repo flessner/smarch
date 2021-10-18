@@ -18,8 +18,6 @@
   $: metatags.title = "smarch Cloud";
   $: metatags.description = $page.meta.description;
 
-  console.log($page);
-
   let links = [
     {
       label: "Overview",
@@ -47,7 +45,11 @@
     {#await $self.get("basicProfile")}
       <HeaderLink label="User..." />
     {:then profile}
-      <HeaderLink label={profile.name || "User"} />
+      <HeaderLink
+        label={profile.name || "User"}
+        href={"https://clay.self.id/" + $self.id}
+        target="_blank"
+      />
     {/await}
     <HeaderUtility icon={Logout20} onClick={logout} />
   {/if}
@@ -61,7 +63,7 @@
       <Title simple title={$page.meta.title} />
     {/if}
     {#if $page.meta.description}
-      <Layout narrow>
+      <Layout text>
         <blockquote>{$page.meta.description}</blockquote>
       </Layout>
     {/if}

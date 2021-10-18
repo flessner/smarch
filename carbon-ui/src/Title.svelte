@@ -11,7 +11,7 @@
   >
     <div class="w-full h-72">
       <Layout class="relative h-full">
-        <h1 class="absolute bottom-12 mt-auto">
+        <h1 class="absolute bottom-6 mt-auto">
           {title}
         </h1>
       </Layout>

@@ -6,15 +6,15 @@
     Row,
     Column,
   } from "./main.js";
-  import Menu20 from "carbon-icons-svelte/lib/Menu24";
-  import Close20 from "carbon-icons-svelte/lib/Close24";
+  import Menu24 from "carbon-icons-svelte/lib/Menu24";
+  import Close24 from "carbon-icons-svelte/lib/Close24";
 
   export let company;
   export let product = "";
   export let href = "/";
   export let links = [];
-  export let iconMenu = Menu20;
-  export let iconClose = Close20;
+  export let iconMenu = Menu24;
+  export let iconClose = Close24;
   export let side = false;
   export let dynamic = false;
   export let rail = false;
@@ -96,7 +96,10 @@
       </div>
     {/if}
     <!-- CONTENT -->
-    <div id="content" class="w-full h-full bg-ui-d0 overflow-y-scroll bg-white">
+    <div
+      id="content"
+      class="w-full h-full relative bg-ui-d0 overflow-y-scroll bg-white"
+    >
       <slot name="content" />
     </div>
   </Row>
