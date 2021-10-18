@@ -1,9 +1,10 @@
 <script>
   export let label = "label";
-  export let href = "/";
+  export let href = undefined;
+  export let onClick = () => {};
 </script>
 
-<a {href}>
+<a {href} on:click={onClick} class="cursor-pointer">
   <div
     class="h-full select-none flex flex-col text-ui-l2 hover:text-ui-l0 duration-200"
   >

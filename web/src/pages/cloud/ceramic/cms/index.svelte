@@ -15,6 +15,7 @@
   import DataViewAlt20 from "carbon-icons-svelte/lib/DataViewAlt20";
   import Delete20 from "carbon-icons-svelte/lib/Delete20";
   import { writable } from "svelte/store";
+  import HeaderLink from "carbon-ui/src/HeaderLink.svelte";
 
   self.subscribe((val) => {
     console.log(val);
@@ -74,7 +75,7 @@
       class="mt-8"
     >
       <Row slot="utilities">
-        <Button label="Close" />
+        <HeaderLink label="Close" />
         <Utility primary icon={Add24} />
       </Row>
     </Table>

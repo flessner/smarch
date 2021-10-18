@@ -8,11 +8,23 @@
 
   let css = "";
   if (primary) {
-    css = "bg-primary text-ui-l0";
+    if (small) {
+      css = "text-primary";
+    } else {
+      css = "bg-primary text-ui-l0";
+    }
   } else if (danger) {
-    css = "bg-danger text-ui-l0";
+    if (small) {
+      css = "text-danger";
+    } else {
+      css = "text-danger text-ui-l0";
+    }
   } else {
-    css = "text-ui-l2 hover:text-ui-l0";
+    if (small) {
+      css = "text-ui-l1";
+    } else {
+      css = "text-ui-l2 hover:text-ui-l0";
+    }
   }
 
   let sizeCss = "";
