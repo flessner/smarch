@@ -1,66 +1,62 @@
 import { TileDocument } from '@ceramicnetwork/stream-tile'
 import { writable, get } from 'svelte/store'
 import { self, authenticated, ceramic } from './ceramic'
+import { CeramicCMS } from "smarch-js";
 
 export const blogs = writable([])
-function loadBlogsDoc() {
-  return TileDocument.create(
-    get(ceramic),
-    null,
-    {
-      controllers: [get(ceramic).did.id],
-      family: 'blogs',
-      deterministic: true
-    },
-    { publish: false, anchor: false }
-  )
+export const cms = writable(undefined)
+
+async function updateBlogs() {
+  if (get(cms)) {
+    const index = await get(cms).getIndex()
+    if (index.content) {
+      let docs = []
+      index.content.forEach((el) => {
+        docs.push(get(cms).getBlog(el))
+      })
+      blogs.set(await Promise.all(docs))
+    } else {
+      blogs.set([])
+    }
+  }
 }
 
 authenticated.subscribe(async (auth) => {
   if (auth) {
-    const doc = await loadBlogsDoc()
+    cms.set(new CeramicCMS(get(ceramic)))
+    const index = get(cms).getIndex()
 
-    doc.subscribe(async () => {
-      blogs.set([])
-      if (doc.content) {
-        let docs = []
-        doc.content.forEach((el) => {
-          docs.push(TileDocument.load(get(ceramic), el))
-        })
-        let data = await Promise.all(docs)
-        blogs.set(data)
-      }
-    })
-
-    if (doc.content === null) {
-      await doc.update([], doc.metadata, { pin: true })
+    if (index.content === null) {
+      await index.update([], index.metadata, { pin: true })
     }
+
+    updateBlogs()
   } else {
-    blogs.set(undefined)
+    cms.set(undefined)
+    blogs.set([])
   }
 })
 
 export async function createBlog(title) {
-  const blog = await TileDocument.create(
-    get(ceramic),
-    { title: title, posts: [] },
-    {
-      controllers: [get(ceramic).did.id],
-      family: 'blog',
-    },
-    { pin: true }
-  )
-  let blogsDoc = await loadBlogsDoc()
-  blogsDoc.update([...blogsDoc.content, blog.id.toString()])
+  if (get(cms)) {
+    get(cms).createBlog(title).then(() => {
+      updateBlogs()
+    })
+  }
 }
 
 export async function deleteBlog(id) {
-  const blog = await TileDocument.load(
-    get(ceramic),
-    id
-  )
-  let blogsDoc = await loadBlogsDoc()
-  let blogList = [...blogsDoc.content].filter((el) => { return el != blog.id.toString() })
-  blogsDoc.update(blogList)
-  blog.update({}, { family: undefined, tags: [] })
+  if (get(cms)) {
+    get(cms).deleteBlog(id, await get(cms).getIndexId()).then(() => {
+      updateBlogs()
+    })
+  }
+}
+
+export async function createPost(blog, title, body) {
+  if (get(cms)) {
+    get(cms).createPost(blog, title, body).then(() => {
+      updateBlogs()
+    })
+  }
 }

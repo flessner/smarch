@@ -1,6 +1,11 @@
 <script>
   import { authenticated, ceramic, self } from "../../stores/ceramic";
-  import { blogs, createBlog, deleteBlog } from "../../stores/ceramic-cms";
+  import {
+    blogs,
+    createBlog,
+    createPost,
+    deleteBlog,
+  } from "../../stores/ceramic-cms";
   import { TileDocument } from "@ceramicnetwork/stream-tile";
   import {
     Layout,
@@ -25,13 +30,13 @@
   // Posts Tab
   let posts = writable([]);
   let selectedBlog = writable(undefined);
-  selectedBlog.subscribe(async (bl) => {
-    if (bl) {
-      let docs = [];
-      bl.content.posts.forEach((el) => {
-        docs.push(TileDocument.load(get(ceramic), el));
-      });
-      posts.set((await Promise.all(docs)) || []);
+  selectedBlog.subscribe(async (blog) => {
+    if (blog) {
+      let posts = [];
+      // blog.posts.forEach((el) => {
+      //   docs.push(TileDocument.load(get(ceramic), el));
+      // });
+      // posts.set((await Promise.all(docs)) || []);
     } else {
       posts.set([]);
     }
@@ -51,15 +56,23 @@
 
   // Delete Blog Modal
   let deleteBlogOpen = false;
-  let deleteBlogTile = writable(undefined);
+  let deleteBlogData = writable(undefined);
   function deleteBlogSubmit() {
-    deleteBlog($deleteBlogTile.id);
-    deleteBlogTile.set(undefined);
+    deleteBlog($deleteBlogData.id);
+    deleteBlogData.set(undefined);
     deleteBlogOpen = false;
   }
 
   // Create Post Modal
   let createPostOpen = false;
+  let createPostTitle = writable("");
+  let createPostText = writable("");
+  function createPostSubmit() {
+    createPost($selectedBlog, $createPostTitle, $createPostText);
+    createPostTitle.set("");
+    createPostText.set("");
+    createPostOpen = false;
+  }
 
   let openTab;
 </script>
@@ -84,13 +97,21 @@
   narrow
   bind:modalOpen={deleteBlogOpen}
   onDel={deleteBlogSubmit}
-  onClose={deleteBlogTile.set(undefined)}
+  onClose={deleteBlogData.set(undefined)}
 >
-  <p>Are you sure, that you want to delete {$deleteBlogTile.content.title}?</p>
+  <p>Are you sure, that you want to delete {$deleteBlogData.title}?</p>
 </Modal>
 
 <!-- Create Post -->
-<Modal cancel wide submit label="Create Post" bind:modalOpen={createPostOpen}>
+<Modal
+  cancel
+  wide
+  submit
+  label="Create Post"
+  bind:modalOpen={createPostOpen}
+  onSubmit={createPostSubmit}
+>
+  <input type="text" bind:value={$createBlogName} placeholder="Post Title" />
   <Markdown />
 </Modal>
 
@@ -116,7 +137,7 @@
         {#each $blogs as blog}
           <!-- Blog Row -->
           <TableRow>
-            <td>{blog.content.title}</td>
+            <td>{blog.title}</td>
             <Row>
               <Utility
                 small
@@ -129,8 +150,8 @@
                 {"..." + blog.id.toString().slice(-10)}
               </td>
             </Row>
-            {#if blog.content.posts}
-              <td>{blog.content.posts.length}</td>
+            {#if blog.posts}
+              <td>{blog.posts.length}</td>
             {:else}
               <td>-</td>
             {/if}
@@ -148,7 +169,7 @@
                 danger
                 icon={Delete20}
                 onClick={() => {
-                  deleteBlogTile.set(blog);
+                  deleteBlogData.set(blog);
                   deleteBlogOpen = true;
                 }}
               />
@@ -157,7 +178,7 @@
         {/each}
       {/if}
     </Table>
-    {#if !$blogs}
+    {#if !$blogs.length}
       <div
         class="h-24 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
       />
@@ -166,7 +187,7 @@
     <!-- Posts Tab -->
     {#if $blogs && $selectedBlog}
       <Table
-        title={$selectedBlog.content.title}
+        title={$selectedBlog.title}
         heading={["Title", "ID", "Created", "Modified", ""]}
       >
         <!-- Post Row -->

@@ -1,5 +1,11 @@
+# Generic
 .DS_Store
+
+# Node
 node_modules
+.npm
+
+# Web
 dist
 .routify
 worker
