@@ -12,6 +12,7 @@
     Modal,
     Title,
     Button,
+    HeaderLink,
   } from "carbon-ui";
   import { get, writable } from "svelte/store";
   import Markdown from "../../comp/Markdown.svelte";
@@ -158,45 +159,44 @@
     </Table>
     {#if !$blogs}
       <div
-        class="h-32 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
+        class="h-24 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
       />
     {/if}
   {:else}
     <!-- Posts Tab -->
-    {#if $blogs}
-      <Row>
-        <Button label="Change Blog" onClick={() => {}} />
-      </Row>
-      {#if $selectedBlog}
-        <Table
-          title={$selectedBlog.content.title}
-          heading={["Title", "ID", "Created", "Modified", ""]}
-          class="mt-8"
-        >
-          <!-- Post Row -->
-          <Row slot="utilities">
-            <Utility
-              primary
-              icon={Add24}
-              onClick={() => {
-                createPostOpen = true;
-              }}
-            />
-          </Row>
-          {#if $posts}
-            {#each $posts as post}
-              <TableRow>
-                <td>{post.content.title}</td>
-              </TableRow>
-            {/each}
-          {/if}
-        </Table>
-        {#if !$posts[0]}
-          <div
-            class="h-32 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
+    {#if $blogs && $selectedBlog}
+      <Table
+        title={$selectedBlog.content.title}
+        heading={["Title", "ID", "Created", "Modified", ""]}
+      >
+        <!-- Post Row -->
+        <Row slot="utilities">
+          <HeaderLink label="Change Blog" />
+          <Utility
+            primary
+            icon={Add24}
+            onClick={() => {
+              createPostOpen = true;
+            }}
           />
+        </Row>
+        {#if $posts}
+          {#each $posts as post}
+            <TableRow>
+              <td>{post.content.title}</td>
+            </TableRow>
+          {/each}
         {/if}
+      </Table>
+      {#if !$posts[0]}
+        <div
+          class="h-24 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
+        />
       {/if}
+    {:else}
+      <Row>
+        <Button primary label="Select Blog" />
+      </Row>
     {/if}
   {/if}
 </Layout>
