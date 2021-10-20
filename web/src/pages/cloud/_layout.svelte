@@ -1,22 +1,11 @@
 <script>
-  import { page, metatags } from "@roxi/routify";
-  import {
-    Shell,
-    HeaderUtility,
-    HeaderLink,
-    Remark,
-    Title,
-    Layout,
-  } from "carbon-ui";
-  import { login, authenticated, logout, self } from "../store.js";
+  import { Shell, HeaderUtility, HeaderLink, Remark } from "carbon-ui";
+  import { login, authenticated, logout, self } from "../../stores/ceramic";
 
   import Login20 from "carbon-icons-svelte/lib/Login20";
   import Logout20 from "carbon-icons-svelte/lib/Logout20";
   import Application20 from "carbon-icons-svelte/lib/Application20";
   import StopFilledAlt20 from "carbon-icons-svelte/lib/StopFilledAlt20";
-
-  $: metatags.title = "smarch Cloud";
-  $: metatags.description = $page.meta.description;
 
   let links = [
     {
@@ -25,20 +14,17 @@
       href: "/cloud",
     },
     {
-      label: "Ceramic",
+      type: "divider",
+    },
+    {
+      label: "Ceramic CMS",
       icon: StopFilledAlt20,
-      links: [
-        {
-          label: "CMS",
-          icon: "",
-          href: "/cloud/ceramic/cms",
-        },
-      ],
+      href: "/cloud/ceramic-cms",
     },
   ];
 </script>
 
-<Shell rail {links} company="smarch" product="Cloud">
+<Shell rail {links} company="smarch" product="Cloud" href="/cloud">
   {#if !$authenticated}
     <HeaderUtility primary icon={Login20} onClick={login} />
   {:else}
@@ -59,14 +45,6 @@
       label="Current services are only for testing and shouldn't be used in production.
       (Clay Testnet)"
     />
-    {#if $page.meta.title}
-      <Title simple title={$page.meta.title} />
-    {/if}
-    {#if $page.meta.description}
-      <Layout text>
-        <blockquote>{$page.meta.description}</blockquote>
-      </Layout>
-    {/if}
     <slot />
   </div>
 </Shell>

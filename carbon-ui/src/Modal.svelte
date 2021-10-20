@@ -1,13 +1,18 @@
 <script>
   import { Layout, Utility, Row, Button } from "./main";
   import Close20 from "carbon-icons-svelte/lib/Close20";
+  import { onMount } from "svelte";
 
   export let label;
+  export let wide = false;
+  export let narrow = false;
   export let cancel = false;
   export let submit = false;
+  export let del = false;
   export let modalOpen = false;
   export let onClose = () => {};
   export let onSubmit = () => {};
+  export let onDel = () => {};
 
   function closeModal() {
     modalOpen = false;
@@ -19,7 +24,7 @@
   <div
     class="absolute top-0 bottom-0 w-full bg-black bg-opacity-70 flex flex-col justify-center z-20"
   >
-    <Layout narrow class="w-full">
+    <Layout {wide} {narrow} class="w-full">
       <div class="border border-ui-d2">
         <div class="bg-ui-d1 w-full relative px-4">
           <Row class="absolute w-full justify-end -ml-4">
@@ -38,6 +43,9 @@
           {/if}
           {#if submit}
             <Button primary label="Submit" onClick={onSubmit} />
+          {/if}
+          {#if del}
+            <Button danger label="Delete" onClick={onDel} />
           {/if}
           <slot name="buttons" />
         </Row>

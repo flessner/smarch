@@ -6,6 +6,7 @@ import Row from './Row.svelte'
 
 import HeaderLink from './HeaderLink.svelte'
 import SidebarLink from './SidebarLink.svelte'
+import SidebarDivider from './SidebarDivider.svelte'
 import Utility from './Utility.svelte'
 import Modal from './Modal.svelte'
 
@@ -20,5 +21,5 @@ import TableRow from './TableRow.svelte'
 const HeaderUtility = Utility
 
 export {
-  Column, HeaderLink, HeaderUtility, Modal, Utility, Layout, Row, Shell, SidebarLink, Title, Remark, Table, TableRow, Button
+  Column, HeaderLink, HeaderUtility, Modal, Utility, Layout, Row, Shell, SidebarLink, Title, Remark, Table, TableRow, Button, SidebarDivider
 };

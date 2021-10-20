@@ -11,9 +11,12 @@
   } else {
     css = "bg-ui-d1 border border-ui-d2";
   }
+
+    let className = "";
+  export { className as class };
 </script>
 
-<div class="{css} w-full">
+<div class="{css} w-full {className}">
   <Layout class="py-2">
     <p class="flex text-ui-l0">
       <WarningFilled20 class="mt-1 mr-2 flex-shrink-0" />

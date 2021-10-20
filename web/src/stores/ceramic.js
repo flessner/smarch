@@ -15,10 +15,21 @@ export const did = derived(
   }
 )
 
+export const ceramic = derived(
+  self,
+  ($self) => {
+    if ($self) {
+      return $self.client.ceramic
+    } else {
+      return undefined
+    }
+  }
+)
+
 // AUTH STATES
 const startedAuth = writable(false)
 self.subscribe((val) => {
-  if (val != undefined) {
+  if (val) {
     startedAuth.set(false)
   }
 })
@@ -35,12 +46,12 @@ export const authenticating = derived(
 )
 
 export const authenticated = derived(
-  self,
+  [self, ceramic],
   () => {
-    if (get(self) == undefined) {
-      return false
-    } else {
+    if (get(self) && get(ceramic)) {
       return true
+    } else {
+      return false
     }
   }
 )

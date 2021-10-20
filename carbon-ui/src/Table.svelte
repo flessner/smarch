@@ -1,5 +1,6 @@
 <script>
   import { Column, Row } from "./main";
+  import ChevronDown20 from "carbon-icons-svelte/lib/ChevronDown20";
 
   export let title;
   export let heading = [];

@@ -5,6 +5,7 @@
     SidebarLink,
     Row,
     Column,
+    SidebarDivider,
   } from "./main.js";
   import Menu24 from "carbon-icons-svelte/lib/Menu24";
   import Close24 from "carbon-icons-svelte/lib/Close24";
@@ -85,11 +86,15 @@
       >
         <div class="py-4">
           {#each links as link}
-            <SidebarLink href={link.href} icon={link.icon} label={link.label}>
-              {#each link.links as sub}
-                <SidebarLink href={sub.href} label={sub.label} />
-              {/each}
-            </SidebarLink>
+            {#if link.type == "divider"}
+              <SidebarDivider />
+            {:else}
+              <SidebarLink href={link.href} icon={link.icon} label={link.label}>
+                {#each link.links as sub}
+                  <SidebarLink href={sub.href} label={sub.label} />
+                {/each}
+              </SidebarLink>
+            {/if}
           {/each}
         </div>
         <slot name="sidebar" />
