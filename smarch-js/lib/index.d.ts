@@ -22,6 +22,7 @@ export declare class CeramicCMS {
     deleteBlog(id: string): Promise<void>;
     getPost(id: string): Promise<Post>;
     createPost(blog: Blog, title: string, text: string): Promise<void>;
+    updatePost(id: string, title: string, text: string): Promise<void>;
     deletePost(blog: Blog, id: string): Promise<void>;
 }
 export {};

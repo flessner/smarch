@@ -12,6 +12,7 @@
     getPost,
     deletePost,
     getBlog,
+    updatePost,
   } from "../../stores/ceramic-cms";
   import {
     Layout,
@@ -102,7 +103,13 @@
   let editPostId = writable(undefined);
   let editPostTitle = writable("");
   let editPostText = writable("");
-  function editPostSubmit() {}
+  function editPostSubmit() {
+    updatePost($editPostId, $editPostTitle, $editPostText);
+    editPostId.set(undefined);
+    editPostTitle.set("");
+    editPostText.set("");
+    editPostOpen = false;
+  }
 
   // Delete Post Modal
   let deletePostOpen = false;

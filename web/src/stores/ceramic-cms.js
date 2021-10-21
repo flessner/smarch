@@ -1,4 +1,3 @@
-import { TileDocument } from '@ceramicnetwork/stream-tile'
 import { writable, get } from 'svelte/store'
 import { self, authenticated, ceramic } from './ceramic'
 import { CeramicCMS } from "smarch-js";
@@ -45,6 +44,11 @@ authenticated.subscribe(async (auth) => {
   } else {
     cms.set(undefined)
     blogs.set([])
+
+    blogDeleteQueue.set([])
+    blogCreateQueue.set([])
+    postDeleteQueue.set([])
+    postCreateQueue.set([])
   }
 })
 
@@ -76,6 +80,14 @@ export async function deleteBlog(id) {
 export async function getPost(id) {
   if (get(cms)) {
     return get(cms).getPost(id)
+  }
+}
+
+export async function updatePost(id, title, text) {
+  if (get(cms)) {
+    get(cms).updatePost(id, title, text).then(() => {
+      updateBlogs()
+    })
   }
 }
 

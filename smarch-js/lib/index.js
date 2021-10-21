@@ -111,6 +111,12 @@ class CeramicCMS {
             yield blogDocument.update({ title: blogDocument.content.title, posts: [...posts, post.id.toString()] });
         });
     }
+    updatePost(id, title, text) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const post = yield stream_tile_1.TileDocument.load(this.ceramic, id);
+            yield post.update({ title: title, text: text, created: post.content.created, modified: dayjs.extend(utc_1.default).utc().format() });
+        });
+    }
     deletePost(blog, id) {
         return __awaiter(this, void 0, void 0, function* () {
             const blogDocument = yield stream_tile_1.TileDocument.load(this.ceramic, blog.id);

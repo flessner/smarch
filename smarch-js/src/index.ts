@@ -126,6 +126,15 @@ export class CeramicCMS {
     await blogDocument.update({ title: (blogDocument.content as any).title as string, posts: [...posts, post.id.toString()] })
   }
 
+  async updatePost(id: string, title: string, text: string) {
+    const post = await TileDocument.load(
+      this.ceramic,
+      id
+    )
+
+    await post.update({ title: title, text: text, created: (post.content as any).created as string, modified: dayjs.extend(utc).utc().format() },)
+  }
+
   async deletePost(blog: Blog, id: string) {
     const blogDocument = await TileDocument.load(
       this.ceramic,
