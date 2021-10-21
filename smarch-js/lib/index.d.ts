@@ -5,6 +5,13 @@ interface Blog {
     title: string;
     posts: Array<string>;
 }
+interface Post {
+    id: string;
+    title: string;
+    text: string;
+    created: string;
+    modified: string;
+}
 export declare class CeramicCMS {
     private ceramic;
     constructor(ceramic: CeramicClient);
@@ -12,9 +19,9 @@ export declare class CeramicCMS {
     getIndexId(): Promise<string>;
     getBlog(id: string): Promise<Blog>;
     createBlog(title: string): Promise<void>;
-    deleteBlog(id: string, indexId: string): Promise<void>;
-    getPost(id: string): Promise<void>;
+    deleteBlog(id: string): Promise<void>;
+    getPost(id: string): Promise<Post>;
     createPost(blog: Blog, title: string, text: string): Promise<void>;
-    deletePost(id: string, blogId: string): Promise<void>;
+    deletePost(blog: Blog, id: string): Promise<void>;
 }
 export {};

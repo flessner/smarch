@@ -40,6 +40,7 @@
     "extensions": "svelte,html,svx,md"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "smarch-js": "file:../smarch-js"
   }
 }

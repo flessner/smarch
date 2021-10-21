@@ -6,6 +6,12 @@ import { CeramicCMS } from "smarch-js";
 export const blogs = writable([])
 export const cms = writable(undefined)
 
+export const blogDeleteQueue = writable([])
+export const blogCreateQueue = writable([])
+
+export const postDeleteQueue = writable([])
+export const postCreateQueue = writable([])
+
 async function updateBlogs() {
   if (get(cms)) {
     const index = await get(cms).getIndex()
@@ -17,6 +23,11 @@ async function updateBlogs() {
       blogs.set(await Promise.all(docs))
     } else {
       blogs.set([])
+
+      blogDeleteQueue.set([])
+      blogCreateQueue.set([])
+      postDeleteQueue.set([])
+      postCreateQueue.set([])
     }
   }
 }
@@ -37,11 +48,19 @@ authenticated.subscribe(async (auth) => {
   }
 })
 
+export async function getBlog(id) {
+  if (get(cms)) {
+    return get(cms).getBlog(id)
+  }
+}
+
 export async function createBlog(title) {
   if (get(cms)) {
     get(cms).createBlog(title).then(() => {
       updateBlogs()
+      blogCreateQueue.set(get(blogCreateQueue).filter((el) => { return el != title }))
     })
+    blogCreateQueue.set([...get(blogCreateQueue), title])
   }
 }
 
@@ -50,13 +69,31 @@ export async function deleteBlog(id) {
     get(cms).deleteBlog(id, await get(cms).getIndexId()).then(() => {
       updateBlogs()
     })
+    blogDeleteQueue.set([...get(blogDeleteQueue), id])
   }
 }
 
-export async function createPost(blog, title, body) {
+export async function getPost(id) {
   if (get(cms)) {
-    get(cms).createPost(blog, title, body).then(() => {
+    return get(cms).getPost(id)
+  }
+}
+
+export async function createPost(blog, title, text) {
+  if (get(cms)) {
+    get(cms).createPost(blog, title, text).then(() => {
+      updateBlogs()
+      postCreateQueue.set(get(postCreateQueue).filter((el) => { return el != title }))
+    })
+    postCreateQueue.set([...get(postCreateQueue), title])
+  }
+}
+
+export async function deletePost(blog, id) {
+  if (get(cms)) {
+    get(cms).deletePost(blog, id).then(() => {
       updateBlogs()
     })
+    postDeleteQueue.set([...get(postDeleteQueue), id])
   }
 }

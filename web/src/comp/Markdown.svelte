@@ -3,9 +3,14 @@
   import Editor from "@toast-ui/editor";
   import { onMount } from "svelte";
 
+  export let value = "";
+
+  let editorId = "editor" + Math.floor(Math.random() * 10000000);
+
   onMount(() => {
     const editor = new Editor({
-      el: document.querySelector("#editor"),
+      el: document.querySelector("#" + editorId),
+      initialValue: value,
       height: "500px",
       initialEditType: "markdown",
       theme: "dark",
@@ -17,7 +22,11 @@
         ["code", "codeblock", "link"],
       ],
     });
+
+    editor.addHook("change", (val) => {
+      value = editor.getMarkdown();
+    });
   });
 </script>
 
-<div id="editor" class="bg-ui-l0" />
+<div id={editorId} class="bg-ui-l0" />

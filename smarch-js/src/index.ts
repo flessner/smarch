@@ -1,5 +1,8 @@
 import { TileDocument } from '@ceramicnetwork/stream-tile'
 import CeramicClient from '@ceramicnetwork/http-client'
+import * as dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+
 
 interface Blog {
   id: string
@@ -74,7 +77,7 @@ export class CeramicCMS {
     await index.update([...blogs, blog.id.toString()])
   }
 
-  async deleteBlog(id: string, indexId: string) {
+  async deleteBlog(id: string) {
     const index = await this.getIndex()
     const blog = await TileDocument.load(
       this.ceramic,
@@ -111,7 +114,7 @@ export class CeramicCMS {
     )
     const post = await TileDocument.create(
       this.ceramic,
-      { title: title, text: text },
+      { title: title, text: text, created: dayjs.extend(utc).utc().format(), modified: dayjs.extend(utc).utc().format() },
       {
         controllers: [this.ceramic.did.id],
         family: 'blogPost',
@@ -119,12 +122,27 @@ export class CeramicCMS {
       { pin: true }
     )
 
-    let posts = blogDocument.content as Array<string>
-    await blogDocument.update([...posts, post.id.toString()])
+    let posts = (blogDocument.content as any).posts as Array<string>
+    await blogDocument.update({ title: (blogDocument.content as any).title as string, posts: [...posts, post.id.toString()] })
   }
 
-  async deletePost(id: string, blogId: string) {
+  async deletePost(blog: Blog, id: string) {
+    const blogDocument = await TileDocument.load(
+      this.ceramic,
+      blog.id
+    )
+    const post = await TileDocument.load(
+      this.ceramic,
+      id
+    )
 
+    let posts = (blogDocument.content as any).posts as Array<string>
+    posts = [...posts].filter((element) => {
+      return element != id
+    })
+
+    await blogDocument.update({ id: blog.id, title: blog.title, posts: posts })
+    await post.update({}, { family: "", tags: [] })
   }
 }
 
