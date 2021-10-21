@@ -35,7 +35,6 @@
   import Delete20 from "carbon-icons-svelte/lib/Delete20";
   import Copy20 from "carbon-icons-svelte/lib/Copy20";
   import Pen20 from "carbon-icons-svelte/lib/Pen20";
-  import { text } from "svelte/internal";
 
   // Posts Tab
   let posts = writable([]);
