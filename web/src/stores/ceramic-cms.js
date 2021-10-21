@@ -14,7 +14,7 @@ export const postCreateQueue = writable([])
 async function updateBlogs() {
   if (get(cms)) {
     const index = await get(cms).getIndex()
-    if (index.content) {
+    if (index.content && index.content.length > -1) {
       let docs = []
       index.content.forEach((el) => {
         docs.push(get(cms).getBlog(el))

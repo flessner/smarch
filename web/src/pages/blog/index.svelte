@@ -6,6 +6,7 @@
 
   let blog = writable(undefined);
   let posts = writable([]);
+
   async function loadData() {
     const blogData = await cms.getBlog(
       "kjzl6cwe1jw149k2xi16yq2xjgagl636qfs4ur3tfxncl0701uxbhofy1g8am9h"

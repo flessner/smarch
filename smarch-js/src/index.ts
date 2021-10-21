@@ -74,7 +74,12 @@ export class CeramicCMS {
     )
 
     let blogs = index.content as Array<string>
-    await index.update([...blogs, blog.id.toString()])
+    if (typeof blogs[Symbol.iterator] === "function") {
+      await index.update([...blogs, blog.id.toString()])
+    } else {
+      await index.update([])
+      await index.update([blog.id.toString()])
+    }
   }
 
   async deleteBlog(id: string) {
@@ -123,7 +128,12 @@ export class CeramicCMS {
     )
 
     let posts = (blogDocument.content as any).posts as Array<string>
-    await blogDocument.update({ title: (blogDocument.content as any).title as string, posts: [...posts, post.id.toString()] })
+    if (typeof posts[Symbol.iterator] === "function") {
+      await blogDocument.update({ title: (blogDocument.content as any).title as string, posts: [...posts, post.id.toString()] })
+    } else {
+      await blogDocument.update({ title: (blogDocument.content as any).title as string, posts: [] })
+      await blogDocument.update({ title: (blogDocument.content as any).title as string, posts: [post.id.toString()] })
+    }
   }
 
   async updatePost(id: string, title: string, text: string) {

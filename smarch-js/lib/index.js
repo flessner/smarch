@@ -73,7 +73,13 @@ class CeramicCMS {
                 family: 'blog',
             }, { pin: true });
             let blogs = index.content;
-            yield index.update([...blogs, blog.id.toString()]);
+            if (typeof blogs[Symbol.iterator] === "function") {
+                yield index.update([...blogs, blog.id.toString()]);
+            }
+            else {
+                yield index.update([]);
+                yield index.update([blog.id.toString()]);
+            }
         });
     }
     deleteBlog(id) {
@@ -108,7 +114,13 @@ class CeramicCMS {
                 family: 'blogPost',
             }, { pin: true });
             let posts = blogDocument.content.posts;
-            yield blogDocument.update({ title: blogDocument.content.title, posts: [...posts, post.id.toString()] });
+            if (typeof posts[Symbol.iterator] === "function") {
+                yield blogDocument.update({ title: blogDocument.content.title, posts: [...posts, post.id.toString()] });
+            }
+            else {
+                yield blogDocument.update({ title: blogDocument.content.title, posts: [] });
+                yield blogDocument.update({ title: blogDocument.content.title, posts: [post.id.toString()] });
+            }
         });
     }
     updatePost(id, title, text) {

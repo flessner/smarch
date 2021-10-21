@@ -25,8 +25,9 @@
     Title,
     Button,
     HeaderLink,
+    Column,
   } from "carbon-ui";
-  import { get, writable } from "svelte/store";
+  import { writable } from "svelte/store";
   import Markdown from "../../comp/Markdown.svelte";
   import * as dayjs from "dayjs";
 
@@ -289,9 +290,18 @@
       {/each}
     </Table>
     {#if !$blogs.length}
-      <div
-        class="h-24 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
-      />
+      <div class="h-48 w-full bg-ui-d1 border-b border-r border-l border-ui-d2">
+        <Column class="h-full w-full justify-center">
+          <Row class="mx-auto">
+            <Button
+              label="Create New Blog"
+              onClick={() => {
+                createBlogOpen = true;
+              }}
+            />
+          </Row>
+        </Column>
+      </div>
     {/if}
   {:else}
     <!-- Posts Tab -->
@@ -377,8 +387,19 @@
       </Table>
       {#if !$posts[0]}
         <div
-          class="h-24 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
-        />
+          class="h-48 w-full bg-ui-d1 border-b border-r border-l border-ui-d2"
+        >
+          <Column class="h-full w-full justify-center">
+            <Row class="mx-auto">
+              <Button
+                label="Create New Post"
+                onClick={() => {
+                  createPostOpen = true;
+                }}
+              />
+            </Row>
+          </Column>
+        </div>
       {/if}
     {:else}
       <Row>
