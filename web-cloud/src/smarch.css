@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ui-d0;
+    @apply text-ui-l0;
+  }
+  p {
+    @apply text-base;
+    @apply lg:text-lg;
+  }
+  a {
+    @apply text-primary;
+  }
+  blockquote {
+    @apply text-ui-l1;
+    @apply text-base;
+    @apply lg:text-lg;
+    @apply font-bold;
+    @apply font-mono;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-5xl;
+    @apply lg:text-5xl;
+    @apply 2xl:text-6xl;
+  }
+  h2 {
+    @apply pb-4;
+    @apply pt-12;
+    @apply text-3xl;
+    @apply lg:text-4xl;
+  }
+  h3 {
+    @apply pb-4;
+    @apply pt-10;
+    @apply text-2xl;
+    @apply lg:text-3xl;
+  }
+  h4 {
+    @apply pb-4;
+    @apply pt-8;
+    @apply text-xl;
+    @apply lg:text-2xl;
+  }
+
+  td, th {
+    @apply font-normal;
+    @apply text-left;
+    @apply px-4;
+    @apply m-0;
+  }
+  th {
+    @apply font-bold;
+  }
+
+  input {
+    @apply p-2;
+    @apply my-2;
+    @apply w-full;
+    @apply bg-ui-d1;
+    @apply outline-none;
+  }
+}

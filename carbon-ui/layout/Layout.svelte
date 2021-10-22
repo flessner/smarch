@@ -2,7 +2,6 @@
   export let full = false;
   export let narrow = false;
   export let wide = false;
-  export let text = false;
 
   let css = "";
   if (full) {
@@ -19,12 +18,6 @@
   export { className as class };
 </script>
 
-<div class="{css} px-4 lg:px-8 {className}">
-  {#if text}
-    <div class="max-w-2xl ml-0 mr-auto">
-      <slot />
-    </div>
-  {:else}
-    <slot />
-  {/if}
+<div class="{css} px-8 {className}">
+  <slot />
 </div>
