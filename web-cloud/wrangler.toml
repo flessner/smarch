@@ -1,4 +1,4 @@
-name = "smarch"
+name = "smarch-web-cloud"
 type = "webpack"
 route = ''
 zone_id = ''

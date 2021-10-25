@@ -1,6 +1,7 @@
 <script>
-  import { Header } from "carbon-ui/comp";
+  import { Header, Sidebar } from "carbon-ui/comp";
 </script>
 
-<Header company="smarch" product="Cloud" />
+<Header company="smarch" product="Cloud" href="/" />
+<Sidebar />
 <slot />

@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const sveltePreprocess = require('svelte-preprocess');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const path = require('path');
@@ -15,7 +14,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      svelte: path.dirname(require.resolve('svelte/package.json'))
+      svelte: path.resolve('node_modules', 'svelte')
     },
     extensions: ['.mjs', '.js', '.svelte'],
     mainFields: ['svelte', 'browser', 'module', 'main']
@@ -38,6 +37,12 @@ module.exports = {
         ]
       },
       {
+        test: /node_modules\/svelte\/.*\.mjs$/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      {
         test: /\.(css|pcss)$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -50,9 +55,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
-    }),
-    new HtmlWebpackPlugin({
-      base: '/'
     }),
     new CopyWebpackPlugin({
       patterns: [

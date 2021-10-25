@@ -3,6 +3,9 @@
   export let narrow = false;
   export let wide = false;
 
+  let className = "";
+  export { className as class };
+
   let css = "";
   if (full) {
     css = "w-full";
@@ -13,9 +16,6 @@
   } else {
     css = "max-w-5xl mx-auto";
   }
-
-  let className = "";
-  export { className as class };
 </script>
 
 <div class="{css} px-8 {className}">

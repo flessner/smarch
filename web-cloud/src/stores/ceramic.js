@@ -5,17 +5,6 @@ import { writable, get, derived } from 'svelte/store';
 // SELF STORE
 export const self = writable(undefined);
 
-export const did = derived(
-  self,
-  ($self) => {
-    if ($self) {
-      return $self.id
-    } else {
-      return undefined
-    }
-  }
-)
-
 export const ceramic = derived(
   self,
   ($self) => {
@@ -28,24 +17,6 @@ export const ceramic = derived(
 )
 
 // AUTH STATES
-const startedAuth = writable(false)
-self.subscribe((val) => {
-  if (val) {
-    startedAuth.set(false)
-  }
-})
-
-export const authenticating = derived(
-  [self, startedAuth],
-  ($self, $startedAuth) => {
-    if ($self == undefined && $startedAuth) {
-      return true
-    } else {
-      return false
-    }
-  }
-)
-
 export const authenticated = derived(
   [self, ceramic],
   () => {
@@ -59,7 +30,6 @@ export const authenticated = derived(
 
 // LOGIN & LOGOUT LOGIC
 export async function login() {
-  startedAuth.set(true)
   if (get(self) != undefined) {
     return self;
   }
