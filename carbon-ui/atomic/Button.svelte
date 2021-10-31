@@ -1,8 +1,12 @@
 <script>
+  import { Row } from "../layout";
+
   export let id;
   export let label;
   export let primary = false;
   export let danger = false;
+  export let big = false;
+  export let icon = undefined;
   export let onClick = () => {};
   export let onBlur = () => {};
 
@@ -17,13 +21,26 @@
   } else {
     colorCss = "border border-ui-d1";
   }
+
+  let sizeCss = "";
+  if (big) {
+    sizeCss = "h-16 font-bold";
+  } else {
+    sizeCss = "h-8";
+  }
 </script>
 
 <button
   {id}
-  class="{colorCss} h-8 p-0 m-0 rounded-md flex-shrink-0 {className}"
+  class="{colorCss} {sizeCss} p-0 m-0 flex-shrink-0 pl-8 {className} 
+  {icon ? 'pr-4' : 'pr-8'}"
   on:click={onClick}
   on:blur={onBlur}
 >
-  <p class="px-8 select-none">{label}</p>
+  <Row>
+    <p class="select-none">{label}</p>
+    {#if icon}
+      <svelte:component this={icon} class="my-auto ml-4" />
+    {/if}
+  </Row>
 </button>

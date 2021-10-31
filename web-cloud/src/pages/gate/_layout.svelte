@@ -5,16 +5,14 @@
 
   let links = [];
   $layout.children.forEach((e) => {
-    console.log(e);
     links.push({
       label: e.title,
       href: e.path,
     });
   });
-
-  console.log($page.meta);
+  console.log($layout.children);
 </script>
 
-<Section label="Ceramic" />
+<Section label="Gate" />
 <Tab {links} />
 <slot />

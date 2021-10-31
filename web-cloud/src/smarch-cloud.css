@@ -13,10 +13,7 @@
     @apply text-ui-d1;
     @apply dark:text-ui-l1;
     @apply selection:bg-primary;
-  }
-  p {
     @apply text-base;
-    @apply lg:text-base;
   }
   a {
     @apply text-primary;
@@ -57,25 +54,19 @@
     border-collapse: inherit;
   }
   table tr:first-child th:first-child {
-    @apply rounded-tl-md;
+    @apply rounded-tl;
   }
   table tr:first-child th:last-child {
-    @apply rounded-tr-md;
+    @apply rounded-tr;
   }
   table tr:last-child td:first-child {
-    @apply rounded-bl-md;
+    @apply rounded-bl;
   }
   table tr:last-child td:last-child {
-    @apply rounded-br-md;
+    @apply rounded-br;
   }
   tr td:first-child {
     @apply border-l;
-  }
-  tr td:first-child, tr th:first-child {
-    @apply lg:pl-8;
-  }
-    tr td:last-child, tr th:last-child {
-    @apply lg:pr-8;
   }
   td, th {
     @apply h-8;
@@ -101,6 +92,7 @@
   }
   button {
     @apply focus:outline-none;
+    @apply rounded;
   }
   select {
     @apply bg-ui-d0;
@@ -108,7 +100,7 @@
     @apply border-ui-d1;
     @apply h-8;
     @apply px-8;
-    @apply rounded-md;
+    @apply rounded;
     @apply focus:outline-none;
   }
 }

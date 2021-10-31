@@ -1,3 +1,16 @@
-<script></script>
+<script>
+  export let open;
 
-<div class="absolute right-0 w-80 bg-ui-l0" />
+  let openCss = "";
+  $: if (open) {
+    openCss = "md:w-96 w-full";
+  } else {
+    openCss = "w-0";
+  }
+</script>
+
+<div
+  class="{openCss} fixed z-20 right-0 top-0 bottom-0 backdrop-blur-xl duration-300 overflow-hidden"
+>
+  <slot />
+</div>

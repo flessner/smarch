@@ -14,7 +14,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      svelte: path.resolve('node_modules', 'svelte')
+      svelte: path.resolve('node_modules', 'svelte'),
+      crypto: path.resolve('node_modules', 'crypto-browserify'),
+      stream: path.resolve('node_modules', 'stream-browserify'),
     },
     extensions: ['.mjs', '.js', '.svelte'],
     mainFields: ['svelte', 'browser', 'module', 'main']

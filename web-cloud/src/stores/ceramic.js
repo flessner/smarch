@@ -3,13 +3,13 @@ import { writable, get, derived } from 'svelte/store';
 
 
 // SELF STORE
-export const self = writable(undefined);
+export const cself = writable(undefined);
 
 export const ceramic = derived(
-  self,
-  ($self) => {
-    if ($self) {
-      return $self.client.ceramic
+  cself,
+  ($cself) => {
+    if ($cself) {
+      return $cself.client.ceramic
     } else {
       return undefined
     }
@@ -18,9 +18,9 @@ export const ceramic = derived(
 
 // AUTH STATES
 export const authenticated = derived(
-  [self, ceramic],
+  [cself, ceramic],
   () => {
-    if (get(self) && get(ceramic)) {
+    if (get(cself) && get(ceramic)) {
       return true
     } else {
       return false
@@ -30,8 +30,8 @@ export const authenticated = derived(
 
 // LOGIN & LOGOUT LOGIC
 export async function login() {
-  if (get(self) != undefined) {
-    return self;
+  if (get(cself) != undefined) {
+    return cself;
   }
 
   const addresses = await window.ethereum.enable()
@@ -40,10 +40,9 @@ export async function login() {
     ceramic: 'https://ceramic-clay.3boxlabs.com',
     connectNetwork: 'testnet-clay',
   });
-  self.set(data)
-  return self;
+  cself.set(data)
 }
 
 export function logout() {
-  self.set(undefined)
+  cself.set(undefined)
 }

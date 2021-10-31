@@ -8,10 +8,13 @@
   <Layout class="h-16">
     <Row class="h-full">
       {#each links as link}
-        <Column class="relative hover:text-ui-l0 cursor-pointer">
-          <p class="my-auto px-8 select-none">{link.label}</p>
+        <a
+          href={link.href}
+          class="h-full relative text-ui-l1 hover:text-ui-l0 cursor-pointer"
+        >
+          <p class="mt-5 px-4 select-none">{link.label}</p>
           <div class="absolute bottom-0 h-1 w-full bg-primary" />
-        </Column>
+        </a>
       {/each}
     </Row>
   </Layout>

@@ -9,8 +9,10 @@
 
 <Layout class="mb-8">
   <h3>{label}</h3>
-  <Row class="justify-between">
-    <p class="my-auto">{description}</p>
-    <Button primary label={button} />
-  </Row>
+  {#if description}
+    <Row class="justify-between">
+      <p class="my-auto">{description}</p>
+      <Button primary label={button} />
+    </Row>
+  {/if}
 </Layout>

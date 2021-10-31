@@ -1,7 +1,7 @@
 <script>
   import { Product } from "carbon-ui/cloud";
   import { Layout, Row } from "carbon-ui/layout";
-  import { Select } from "carbon-ui/atomic";
+  import "css-doodle";
 
   let values = [
     { label: "Blog 1", value: "dwadwa" },
@@ -9,18 +9,17 @@
   ];
 </script>
 
-<!-- routify:options title="Ceramic CMS" -->
+<!-- routify:options title="Ceramic" -->
 <!-- routify:options description="Manage Content on the decentralized Web." -->
 
 <Product
-  label="CMS"
-  description="Manage Content on the decentralized Web."
-  button="Create Blog"
+  label="Ceramic"
+  description="Manage Content on the Ceramic Network."
+  button="Create Bucket"
 />
 <Layout>
   <Row class="justify-between">
-    <h4>Blogs</h4>
-    <Select {values} class="mt-auto mb-4" />
+    <h4>Buckets</h4>
   </Row>
   <table>
     <tr>
@@ -40,16 +39,13 @@
       <td>#4343</td>
     </tr>
   </table>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
-  <h2>H</h2>
+  <div class="w-full overflow-hidden mt-4 relative">
+    <css-doodle>
+      @grid: 1 / 100vw 100px; background-size: 83px 135px; background-color:
+      #D24B45; background-image: @doodle( @grid: 2 / 100%; background:
+      @pn(#3C2B34, #F7F0E9, #F7F0E9); transform-origin: @pn(100% 100%, 0 100%,
+      100% 0, 0 0); transform: rotateX(45deg) skewY(@pn(34deg, -34deg, -34deg));
+      );
+    </css-doodle>
+  </div>
 </Layout>
