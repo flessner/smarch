@@ -1,5 +1,5 @@
 <script>
-  import { Header, Sidebar } from "carbon-ui/comp";
+  import { Header } from "carbon-ui/comp";
   import { Button } from "carbon-ui/atomic";
   import { Layout, Column } from "carbon-ui/layout";
   //import { authenticated } from "../stores/ceramic";

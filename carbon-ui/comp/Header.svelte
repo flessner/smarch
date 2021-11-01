@@ -1,5 +1,4 @@
 <script>
-  import { Sidebar } from "../comp";
   import { writable } from "svelte/store";
   import { Column, Row } from "../layout";
 
@@ -20,30 +19,50 @@
 
 <svelte:window bind:scrollY={$y} />
 
-<Row
-  class="sticky z-30 top-0 h-16 backdrop-filter backdrop-blur-xl w-full justify-between"
->
-  <a {href} class="cursor-pointer">
-    <div class="px-6 h-16 flex flex-col justify-center">
-      <p class="text-xl select-none">
-        <span class="font-bold text-ui-l0">{company}</span>
-        <span class="font-normal text-ui-l1">{product}</span>
-      </p>
-    </div>
-  </a>
-  <slot />
-  {#if $$slots.sidebar}
-    <div class="h-16 w-16 cursor-pointer" on:click={toggleSidebar}>
-      {#if sidebarOpen}
-        <Close32 class="m-auto h-full text-ui-l0" />
-      {:else}
-        <Menu32 class="m-auto h-full text-ui-l0" />
-      {/if}
-    </div>
-  {/if}
-</Row>
+<div class="h-16" />
 
-<Sidebar bind:open={sidebarOpen}>
-  <div class="h-16" />
-  <slot name="sidebar" />
-</Sidebar>
+<Column class="fixed z-20 top-0 bottom-0 w-full">
+  <div class="backdrop-filter backdrop-blur-xl">
+    <!-- HEADER -->
+    <Row class="h-16 w-full justify-between">
+      <a {href} class="cursor-pointer">
+        <div class="px-6 h-16 flex flex-col justify-center">
+          <p class="text-xl select-none">
+            <span class="font-bold text-ui-l0">{company}</span>
+            <span class="font-normal text-ui-l1">{product}</span>
+          </p>
+        </div>
+      </a>
+      <slot />
+      {#if $$slots.sidebar}
+        <div
+          class="h-16 w-16 flex flex-row justify-center cursor-pointer"
+          on:click={toggleSidebar}
+        >
+          <Column class="h-full justify-center">
+            {#if sidebarOpen}
+              <Close32 class="text-ui-l0" />
+            {:else}
+              <Menu32 class="text-ui-l0" />
+            {/if}
+          </Column>
+        </div>
+      {/if}
+    </Row>
+
+    <!-- SIDEBAR -->
+    {#if sidebarOpen}
+      <div class="h-64">
+        <slot name="sidebar" />
+      </div>
+    {/if}
+  </div>
+
+  <!-- SIDEBAR RUNOFF -->
+  {#if sidebarOpen}
+    <div
+      on:click={toggleSidebar}
+      class="w-full flex-grow backdrop-filter backdrop-brightness-50 cursor-pointer"
+    />
+  {/if}
+</Column>
