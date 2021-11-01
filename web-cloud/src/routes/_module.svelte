@@ -2,7 +2,7 @@
   import { Header, Sidebar } from "carbon-ui/comp";
   import { Button } from "carbon-ui/atomic";
   import { Layout, Column } from "carbon-ui/layout";
-  import { authenticated } from "../stores/ceramic";
+  //import { authenticated } from "../stores/ceramic";
 
   let testing = true;
 </script>
@@ -14,7 +14,7 @@
   </div>
 </Header>
 
-{#if $authenticated || testing}
+{#if testing}
   <slot />
 {:else}
   <Layout narrow>

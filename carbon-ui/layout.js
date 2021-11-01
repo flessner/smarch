@@ -1,5 +1,5 @@
-import Column from "./layout/Column"
-import Layout from "./layout/Layout"
-import Row from "./layout/Row"
+import Column from "./layout/Column.svelte"
+import Layout from "./layout/Layout.svelte"
+import Row from "./layout/Row.svelte"
 
 export { Column, Layout, Row }

@@ -20,7 +20,9 @@
 
 <svelte:window bind:scrollY={$y} />
 
-<Row class="sticky z-30 top-0 h-16 backdrop-blur-xl w-full justify-between">
+<Row
+  class="sticky z-30 top-0 h-16 backdrop-filter backdrop-blur-xl w-full justify-between"
+>
   <a {href} class="cursor-pointer">
     <div class="px-6 h-16 flex flex-col justify-center">
       <p class="text-xl select-none">

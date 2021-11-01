@@ -1,8 +1,7 @@
-const colors = require('tailwindcss/colors');
+import { defineConfig } from 'windicss/helpers'
 
-module.exports = {
+export default defineConfig({
   mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{js,svelte}', './node_modules/carbon-ui/**/*.{js,svelte}'],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -26,5 +25,5 @@ module.exports = {
       danger: "#da1e28",
     },
   },
-  plugins: [],
-}
+  plugins: []
+})

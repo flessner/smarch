@@ -10,7 +10,7 @@
 </script>
 
 <div
-  class="{openCss} fixed z-20 right-0 top-0 bottom-0 backdrop-blur-xl duration-300 overflow-hidden"
+  class="{openCss} fixed z-20 right-0 top-0 bottom-0 backdrop-filter backdrop-blur-xl duration-300 overflow-hidden"
 >
   <slot />
 </div>

@@ -1,5 +1,5 @@
-import Button from "./atomic/Button"
-import Select from "./atomic/Select"
+import Button from "./atomic/Button.svelte"
+import Select from "./atomic/Select.svelte"
 
 export {
   Button,
