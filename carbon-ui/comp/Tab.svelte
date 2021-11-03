@@ -1,20 +1,22 @@
 <script>
-  import { Layout, Row, Column } from "../layout";
-  import { node, url } from "@roxi/routify";
+  import { Layout, Row } from "../layout";
 
-  export let children = false;
+  export let node = undefined;
+  export let url = undefined;
+  export let address = "";
   export let label = "";
   export let links = [];
 
-  let address = "";
-  url.subscribe(() => {
-    setTimeout(() => {
-      address = window.location.href;
-    }, 25);
-  });
+  if (url) {
+    url.subscribe(() => {
+      setTimeout(() => {
+        address = window.location.href;
+      }, 25);
+    });
+  }
 
-  if (children) {
-    $node.pages.forEach((page) => {
+  if (node) {
+    node.pages.forEach((page) => {
       links.push({
         label: page.meta.title,
         href: page.path,

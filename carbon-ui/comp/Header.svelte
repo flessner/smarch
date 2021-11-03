@@ -1,12 +1,12 @@
 <script>
   import { writable } from "svelte/store";
   import { Column, Row } from "../layout";
-  import { url } from "@roxi/routify";
 
   import Menu32 from "carbon-icons-svelte/lib/Menu32";
   import Close32 from "carbon-icons-svelte/lib/Close32";
 
   export let href = undefined;
+  export let url = undefined;
   export let company = "";
   export let product = "";
   export let sidebarOpen = false;
@@ -17,9 +17,11 @@
     sidebarOpen = !sidebarOpen;
   }
 
-  url.subscribe(() => {
-    sidebarOpen = false;
-  });
+  if (url) {
+    url.subscribe(() => {
+      sidebarOpen = false;
+    });
+  }
 </script>
 
 <svelte:window bind:scrollY={$y} />
