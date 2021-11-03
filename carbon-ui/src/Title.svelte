@@ -1,5 +1,5 @@
 <script>
-  import { Layout } from "../layout";
+  import { Layout } from "./main";
 
   export let title = "Title";
 </script>

@@ -1,6 +1,5 @@
 <script>
-  import { Product } from "carbon-ui/cloud";
-  import { Layout, Row } from "carbon-ui/layout";
+  import { Product, Layout, Row } from "carbon-ui";
 </script>
 
 <!-- routify:meta title="Ceramic" -->

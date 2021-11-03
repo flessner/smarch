@@ -1,6 +1,5 @@
 <script>
-  import { Button } from "../atomic";
-  import { Column } from "../layout";
+  import { Button, Column } from "./main";
   import { createPopper } from "@popperjs/core";
   import { onMount } from "svelte";
   import CaretDownGlyph from "carbon-icons-svelte/lib/CaretDownGlyph";

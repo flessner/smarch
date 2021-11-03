@@ -1,6 +1,6 @@
 <script>
   import { writable } from "svelte/store";
-  import { Column, Row } from "../layout";
+  import { Column, Row } from "./main";
 
   import Menu32 from "carbon-icons-svelte/lib/Menu32";
   import Close32 from "carbon-icons-svelte/lib/Close32";

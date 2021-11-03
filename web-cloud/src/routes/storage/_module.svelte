@@ -1,7 +1,6 @@
 <script>
-  import { Tab } from "carbon-ui/comp";
+  import { Tab } from "carbon-ui";
 </script>
 
 <Tab children label="Storage" />
 <slot />
-

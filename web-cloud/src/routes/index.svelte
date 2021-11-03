@@ -1,6 +1,5 @@
 <script>
-  import { Tab } from "carbon-ui/comp";
-  import { Layout } from "carbon-ui/layout";
+  import { Layout } from "carbon-ui";
 </script>
 
 <Layout>

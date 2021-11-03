@@ -1,5 +1,5 @@
 <script>
-  import { Layout, Row } from "../layout";
+  import { Layout, Row } from "./main";
 
   export let node = undefined;
   export let url = undefined;

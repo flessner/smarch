@@ -1,6 +1,5 @@
 <script>
-  import { Layout, Row } from "../layout";
-  import { Button } from "../atomic";
+  import { Layout, Row, Button } from "./main";
 
   export let label = "";
   export let description = "";

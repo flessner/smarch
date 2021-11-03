@@ -1,5 +1,5 @@
 <script>
-  import { Row } from "../layout";
+  import { Row } from "./main";
 
   export let id = undefined;
   export let label;

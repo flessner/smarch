@@ -1,5 +1,5 @@
 <script>
-  import { Product } from "carbon-ui/cloud";
+  import { Product } from "carbon-ui";
 </script>
 
 <!-- routify:meta title="Ceramic" -->

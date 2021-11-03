@@ -1,7 +1,5 @@
 <script>
-  import { Header } from "carbon-ui/comp";
-  import { Button } from "carbon-ui/atomic";
-  import { Layout, Column, Row } from "carbon-ui/layout";
+  import { Header, Layout, Column, Row, Button } from "carbon-ui";
   import { authenticated, login } from "../stores/ceramic";
 
   let testing = true;
