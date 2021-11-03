@@ -1,3 +1,5 @@
+variable "DO_PAT" {}
+
 terraform {
   required_providers {
     digitalocean = {
