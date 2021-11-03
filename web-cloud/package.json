@@ -18,7 +18,6 @@
   "dependencies": {
     "@self.id/web": "^0.1.0",
     "carbon-ui": "file:../carbon-ui",
-    "carbon-icons-svelte": "^10.38.0",
     "css-doodle": "^0.21.5"
   }
 }

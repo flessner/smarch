@@ -29,10 +29,5 @@ export default defineConfig({
       },
     }),
   ],
-  server: { port: 8000 },
-  build: {
-    rollupOptions: {
-      external: ["carbon-icons-svelte"]
-    }
-  }
+  server: { port: 8000 }
 })
