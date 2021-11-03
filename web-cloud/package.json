@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "build": "vite build",
     "preview": "vite preview",
