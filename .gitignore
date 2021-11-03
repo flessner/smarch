@@ -1,11 +1,13 @@
-# Generic
+# generic
 .DS_Store
 
-# Node
+# node / web
 node_modules
 .npm
-
-# Web
 dist
 .routify
 worker
+
+# terraform
+.terraform
+.terraform.lock.hcl

@@ -1,0 +1,21 @@
+terraform {
+  required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
+
+provider "digitalocean" {
+  token = var.DO_PAT
+}
+
+resource "digitalocean_project" "smarch" {
+  name        = "smarch"
+  purpose     = "Web Application"
+  environment = "Development"
+  resources = [
+    digitalocean_app.web-cloud.id
+  ]
+}
