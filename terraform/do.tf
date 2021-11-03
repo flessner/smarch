@@ -14,9 +14,7 @@ provider "digitalocean" {
 }
 
 resource "digitalocean_project" "smarch" {
-  name        = "smarch"
-  purpose     = "Web Application"
-  environment = "Development"
+  name = "smarch"
   resources = [
     digitalocean_app.web-cloud.id
   ]
