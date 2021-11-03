@@ -44,25 +44,10 @@ h4 {
 /* TABLES */
 table {
   @apply w-full;
-  border-spacing: 0;
-  border-collapse: inherit;
+  @apply border;
+  @apply border-ui-d1;
 }
-table tr:first-child th:first-child {
-  @apply rounded-tl;
-}
-table tr:first-child th:last-child {
-  @apply rounded-tr;
-}
-table tr:last-child td:first-child {
-  @apply rounded-bl;
-}
-table tr:last-child td:last-child {
-  @apply rounded-br;
-}
-tr td:first-child {
-  @apply border-l;
-}
-td, th {
+td {
   @apply h-8;
   @apply px-4;
   @apply border-b;
@@ -70,7 +55,8 @@ td, th {
   @apply border-ui-d1;
 }
 th {
-  @apply font-normal;
+  @apply h-8;
+  @apply px-4;
   @apply text-left;
   @apply text-ui-l0;
   @apply bg-ui-d1;

@@ -1,7 +1,7 @@
 <script>
   import { Row } from "../layout";
 
-  export let id;
+  export let id = undefined;
   export let label;
   export let primary = false;
   export let danger = false;

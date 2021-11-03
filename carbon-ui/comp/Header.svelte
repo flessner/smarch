@@ -1,6 +1,7 @@
 <script>
   import { writable } from "svelte/store";
   import { Column, Row } from "../layout";
+  import { url } from "@roxi/routify";
 
   import Menu32 from "carbon-icons-svelte/lib/Menu32";
   import Close32 from "carbon-icons-svelte/lib/Close32";
@@ -15,14 +16,21 @@
   function toggleSidebar() {
     sidebarOpen = !sidebarOpen;
   }
+
+  url.subscribe(() => {
+    sidebarOpen = false;
+  });
 </script>
 
 <svelte:window bind:scrollY={$y} />
 
 <div class="h-16" />
 
-<Column class="fixed z-20 top-0 bottom-0 w-full">
-  <div class="backdrop-filter backdrop-blur-xl">
+<Column class="fixed z-20 top-0 bottom-0 w-full pointer-events-none">
+  <div
+    class="
+        h-auto backdrop-filter backdrop-blur-xl pointer-events-auto overflow-hidden"
+  >
     <!-- HEADER -->
     <Row class="h-16 w-full justify-between">
       <a {href} class="cursor-pointer">
@@ -51,18 +59,17 @@
     </Row>
 
     <!-- SIDEBAR -->
-    {#if sidebarOpen}
-      <div class="h-64">
-        <slot name="sidebar" />
-      </div>
-    {/if}
+    <div class={sidebarOpen ? "h-auto" : "h-0"}>
+      <slot name="sidebar" />
+    </div>
   </div>
 
   <!-- SIDEBAR RUNOFF -->
-  {#if sidebarOpen}
-    <div
-      on:click={toggleSidebar}
-      class="w-full flex-grow backdrop-filter backdrop-brightness-50 cursor-pointer"
-    />
-  {/if}
+  <div
+    on:click={toggleSidebar}
+    class="{sidebarOpen
+      ? 'backdrop-brightness-50 cursor-pointer pointer-events-auto'
+      : 'backdrop-brightness-100 pointer-events-none'}
+      w-full flex-grow backdrop-filter duration-300"
+  />
 </Column>

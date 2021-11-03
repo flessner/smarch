@@ -2,5 +2,6 @@
   import { Tab } from "carbon-ui/comp";
 </script>
 
-<Tab children label="Gate" />
+<Tab children label="Storage" />
 <slot />
+

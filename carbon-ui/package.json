@@ -2,6 +2,7 @@
   "name": "carbon-ui",
   "version": "1.0.0",
   "devDependencies": {
+    "@roxi/routify": "^3.0.0-next.1",
     "@popperjs/core": "^2.10.2",
     "carbon-icons-svelte": "^10.38.0",
     "svelte": "^3.42.6"
