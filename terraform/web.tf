@@ -1,7 +1,7 @@
 resource "digitalocean_app" "web-cloud" {
   spec {
     name   = "web-cloud"
-    region = "nyc3"
+    region = "nyc"
 
     static_site {
       name          = "web-cloud"
