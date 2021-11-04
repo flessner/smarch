@@ -16,8 +16,9 @@
     "vite-plugin-windicss": "^1.4.12"
   },
   "dependencies": {
+    "@popperjs/core": "^2.10.2",
     "@self.id/web": "^0.1.0",
-    "carbon-ui": "file:../carbon-ui",
+    "carbon-icons-svelte": "^10.38.0",
     "css-doodle": "^0.21.5"
   }
 }

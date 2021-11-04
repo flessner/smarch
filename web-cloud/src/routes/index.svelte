@@ -1,5 +1,5 @@
 <script>
-  import { Layout } from "carbon-ui";
+  import { Layout } from "carbon-ui/main";
 </script>
 
 <Layout>

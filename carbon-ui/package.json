@@ -1,9 +1,0 @@
-{
-  "name": "carbon-ui",
-  "main": "src/main.js",
-  "version": "1.0.0",
-  "devDependencies": {
-    "@popperjs/core": "^2.10.2",
-    "svelte": "^3.42.6"
-  }
-}

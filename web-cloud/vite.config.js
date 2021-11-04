@@ -5,11 +5,26 @@ import { mdsvex } from 'mdsvex'
 
 import WindiCSS from 'vite-plugin-windicss'
 
+import path from 'path'
+const __dirname = path.resolve();
 const production = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   clearScreen: false,
+  resolve: {
+    alias: {
+      "carbon-ui": path.resolve(__dirname, '../carbon-ui'),
+      "@popperjs/core": path.resolve(__dirname, './node_modules/@popperjs/core'),
+      "carbon-icons-svelte": path.resolve(__dirname, './node_modules/carbon-icons-svelte'),
+    }
+  },
   plugins: [
+    WindiCSS({
+      scan: {
+        dirs: ['./src', '../carbon-ui'],
+        fileExtensions: ['svelte', 'md', 'js', 'ts'],
+      },
+    }),
     routify(),
     svelte({
       emitCss: true,
@@ -20,14 +35,7 @@ export default defineConfig({
       preprocess: [
         mdsvex({ extension: 'md' }),
       ],
-    }),
-    WindiCSS({
-      scan: {
-        dirs: ['./src', '../carbon-ui'],
-        exclude: ['../carbon-ui/node_modules'],
-        fileExtensions: ['svelte', 'md', 'js', 'ts'],
-      },
-    }),
+    })
   ],
   server: { port: 8000 }
 })
