@@ -16,6 +16,6 @@ provider "digitalocean" {
 resource "digitalocean_project" "smarch" {
   name = "smarch"
   resources = [
-    digitalocean_app.web-cloud.id
+
   ]
 }
