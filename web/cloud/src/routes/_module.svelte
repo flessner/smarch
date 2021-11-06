@@ -1,5 +1,5 @@
 <script>
-  import { Header, Layout, Column, Row, Button } from "carbon-ui/main";
+  import { Header, Layout, Column, Row, Button } from "carbon/svelte";
   import { authenticated, login } from "../stores/ceramic";
 
   let testing = true;

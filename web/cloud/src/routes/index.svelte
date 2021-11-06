@@ -1,5 +1,5 @@
 <script>
-  import { Layout } from "carbon-ui/main";
+  import { Layout } from "carbon/svelte";
 </script>
 
 <Layout>

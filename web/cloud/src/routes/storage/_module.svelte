@@ -1,6 +1,7 @@
 <script>
-  import { Tab } from "carbon-ui/main";
+  import { Tab } from "carbon/svelte";
+  import { node, url } from "@roxi/routify";
 </script>
 
-<Tab label="Storage" />
+<Tab {node} {url} label="Storage" />
 <slot />

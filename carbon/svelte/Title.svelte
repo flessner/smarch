@@ -1,5 +1,5 @@
 <script>
-  import { Layout } from "./main";
+  import { Layout } from "../svelte";
 
   export let title;
 </script>

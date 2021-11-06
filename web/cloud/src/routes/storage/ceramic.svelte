@@ -1,5 +1,5 @@
 <script>
-  import { Product, Layout, Row } from "carbon-ui/main";
+  import { Product, Layout, Row } from "carbon/svelte";
 </script>
 
 <!-- routify:meta title="Ceramic" -->
@@ -9,9 +9,6 @@
   description="Manage Content on the Ceramic Network."
   button="Create Bucket"
 />
-<Layout>
-  <Row class="justify-between" />
-</Layout>
 <Layout wide>
   <h4>Buckets</h4>
   <table>

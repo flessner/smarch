@@ -1,5 +1,5 @@
 <script>
-  import { Product } from "carbon-ui/main";
+  import { Product } from "carbon/svelte";
 </script>
 
 <!-- routify:meta title="Ceramic" -->
