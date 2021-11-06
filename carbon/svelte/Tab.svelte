@@ -1,10 +1,9 @@
 <script>
-  import { Layout, Row } from "./main";
+  import { Layout, Row } from "../svelte";
+  import { node, url } from "@roxi/routify";
 
-  export let node = undefined;
-  export let url = undefined;
   export let address = "";
-  export let label = "";
+  export let label;
   export let links = [];
 
   if (url) {
@@ -15,8 +14,8 @@
     });
   }
 
-  if (node) {
-    node.pages.forEach((page) => {
+  if ($node) {
+    $node.pages.forEach((page) => {
       links.push({
         label: page.meta.title,
         href: page.path,

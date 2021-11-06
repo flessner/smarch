@@ -1,5 +1,5 @@
 <script>
-  import { Button, Column } from "./main";
+  import { Button, Column } from "../svelte";
   import { createPopper } from "@popperjs/core";
   import { onMount } from "svelte";
   import CaretDownGlyph from "carbon-icons-svelte/lib/CaretDownGlyph";

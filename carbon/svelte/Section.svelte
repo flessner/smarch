@@ -1,7 +1,7 @@
 <script>
-  import { Layout, Row } from "./main";
+  import { Layout, Row } from "../svelte";
 
-  export let label = "";
+  export let label;
   export let changer = "";
   export let changerHref = undefined;
 </script>

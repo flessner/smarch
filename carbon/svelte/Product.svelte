@@ -1,7 +1,7 @@
 <script>
-  import { Layout, Row, Button } from "./main";
+  import { Layout, Row, Button } from "../svelte";
 
-  export let label = "";
+  export let label;
   export let description = "";
   export let button = "";
 </script>

@@ -1,7 +1,7 @@
 <script>
   import { Layout } from "./main";
 
-  export let title = "Title";
+  export let title;
 </script>
 
 <div

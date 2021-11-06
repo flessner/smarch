@@ -1,5 +1,5 @@
 <script>
-  import { Row } from "./main";
+  import { Row } from "../svelte";
 
   export let id = undefined;
   export let label;
