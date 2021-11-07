@@ -1,0 +1,5 @@
+services:
+    eth:
+      build:
+        context: .
+        dockerfile: eth.dockerfile
