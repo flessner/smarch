@@ -1,5 +1,5 @@
-FROM archlinux
+FROM archlinux:base
 
 RUN pacman -Sy geth --noconfirm
 
-ENTRYPOINT geth --syncmode "light"
+ENTRYPOINT geth -syncmode light
