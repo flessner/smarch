@@ -1,21 +1,17 @@
-import { fastify } from "fastify"
+import { App } from "uWebSockets.js"
 
-const server = fastify();
+const pkg = require('../package.json');
+const server = App()
 
-async function init() {
-  await server.register(require('fastify-cors'));
+require('./auth').init(server)
+require('./gate').init(server)
 
-  await server.register(require('../src/routes/health'), { prefix: '/health' });
+server.get("/meta", (res, req) => {
+  res.writeStatus("200")
+  res.writeHeader("Content-Type", "application/json")
+  res.end(JSON.stringify({ version: pkg.version }))
+})
 
-  server.setErrorHandler((err, req, res) => {
-    req.log.error(err.toString());
-    res.send({ err });
-  });
-
-  server.listen(6060, (err, address) => {
-    if (err) throw err;
-    console.log(`🚀 listening on ${address}`);
-  });
-};
-
-module.exports = init();
+server.listen(6060, () => {
+  console.log("🚀 Listening on port 6060")
+})

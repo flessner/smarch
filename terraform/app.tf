@@ -23,11 +23,13 @@ resource "digitalocean_app" "app_api" {
     name   = "app_api"
     region = "nyc"
 
-    static_site {
-      name              = "app_api"
-      source_dir        = "api"
-      build_command     = "npm run build"
-      catchall_document = "index.html"
+    service {
+      name             = "app_api"
+      environment_slug = "node"
+      source_dir       = "api"
+      http_port        = "6060"
+      build_command    = "npm run build"
+      run_command      = "npm run start"
 
       github {
         deploy_on_push = true
