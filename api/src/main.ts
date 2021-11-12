@@ -1,17 +1,17 @@
-import { App } from "uWebSockets.js"
+import * as HyperExpress from "hyper-express"
 
 const pkg = require('../package.json');
-const server = App()
+const server = new HyperExpress.Server()
 
 require('./auth').init(server)
 require('./gate').init(server)
 
-server.get("/meta", (res, req) => {
-  res.writeStatus("200")
-  res.writeHeader("Content-Type", "application/json")
-  res.end(JSON.stringify({ version: pkg.version }))
+server.get("/meta", (req, res) => {
+  res
+    .status(200)
+    .json({ version: pkg.version })
 })
 
-server.listen(6060, () => {
-  console.log("🚀 Listening on port 6060")
-})
+server.listen(6060)
+  .then(() => { console.log("🚀 Listening on port 6060") })
+  .catch(err => { console.error(err) })
