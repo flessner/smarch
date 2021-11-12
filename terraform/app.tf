@@ -1,10 +1,10 @@
 resource "digitalocean_app" "app_web_cloud" {
   spec {
-    name   = "app_web_cloud"
+    name   = "app-web-cloud"
     region = "nyc"
 
     static_site {
-      name              = "app_web_cloud"
+      name              = "main"
       source_dir        = "web/cloud"
       build_command     = "npm run build"
       catchall_document = "index.html"
@@ -20,11 +20,11 @@ resource "digitalocean_app" "app_web_cloud" {
 
 resource "digitalocean_app" "app_api" {
   spec {
-    name   = "app_api"
+    name   = "app-api"
     region = "nyc"
 
     service {
-      name             = "app_api"
+      name             = "main"
       environment_slug = "node"
       source_dir       = "api"
       http_port        = "6060"
