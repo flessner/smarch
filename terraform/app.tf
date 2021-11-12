@@ -24,12 +24,11 @@ resource "digitalocean_app" "app_api" {
     region = "nyc"
 
     service {
-      name             = "main"
-      environment_slug = "node"
-      source_dir       = "api"
-      http_port        = "6060"
-      build_command    = "npm run build"
-      run_command      = "npm run start"
+      name          = "main"
+      source_dir    = "api"
+      http_port     = "6060"
+      build_command = "npm run build"
+      run_command   = "npm run start"
 
       github {
         deploy_on_push = true
