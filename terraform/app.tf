@@ -65,13 +65,6 @@ resource "digitalocean_database_cluster" "redis_fra" {
   engine     = "redis"
   version    = 6
   size       = "db-s-1vcpu-1gb"
-  region     = "fra"
+  region     = "fra1"
   node_count = 1
-}
-
-resource "digitalocean_database_replica" "redis_nyc" {
-  cluster_id = digitalocean_database_cluster.redis_fra.id
-  name       = "redis-nyc"
-  size       = "db-s-1vcpu-1gb"
-  region     = "nyc"
 }
