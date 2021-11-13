@@ -19,9 +19,9 @@ resource "digitalocean_project" "smarch" {
 }
 
 output "api_nyc_ingress" {
-  value = app_api_nyc.default_ingress
+  value = digitalocean_app.app_api_nyc.default_ingress
 }
 
 output "api_nyc_url" {
-  value = app_api_nyc.live_url
+  value = digitalocean_app.app_api_nyc.live_url
 }
