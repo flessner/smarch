@@ -18,9 +18,30 @@ resource "digitalocean_app" "app_web_cloud" {
   }
 }
 
-resource "digitalocean_app" "app_api" {
+resource "digitalocean_app" "app_api_fra" {
   spec {
-    name   = "app-api"
+    name   = "app-api-fra"
+    region = "fra"
+
+    service {
+      name          = "main"
+      source_dir    = "api"
+      http_port     = "6060"
+      build_command = "npm run build"
+      run_command   = "npm run start"
+
+      github {
+        deploy_on_push = true
+        branch         = "master"
+        repo           = "flessner/smarch"
+      }
+    }
+  }
+}
+
+resource "digitalocean_app" "app_api_nyc" {
+  spec {
+    name   = "app-api-nyc"
     region = "nyc"
 
     service {

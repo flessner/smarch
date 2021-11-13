@@ -1,6 +1,6 @@
 import * as HyperExpress from "hyper-express"
 
-const pkg = require('../package.json');
+const env = process.env
 const server = new HyperExpress.Server()
 
 require('./auth').init(server)
@@ -9,7 +9,7 @@ require('./gate').init(server)
 server.get("/meta", (req, res) => {
   res
     .status(200)
-    .json({ version: pkg.version })
+    .json({ version: env.npm_package_version })
 })
 
 server.listen(6060)
