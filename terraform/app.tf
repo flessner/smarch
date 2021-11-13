@@ -1,7 +1,6 @@
 resource "digitalocean_app" "app_web_cloud" {
   spec {
-    name   = "app-web-cloud"
-    region = "nyc"
+    name = "app-web-cloud"
 
     static_site {
       name              = "main"
@@ -62,18 +61,11 @@ resource "digitalocean_app" "app_api_nyc" {
   }
 }
 
-resource "digitalocean_database_cluster" "redis_fra" {
-  name       = "redis-fra"
+resource "digitalocean_database_cluster" "redis_nyc" {
+  name       = "redis-nyc"
   engine     = "redis"
   version    = 6
   size       = "db-s-1vcpu-1gb"
-  region     = "fra1"
+  region     = "nyc"
   node_count = 1
-}
-
-resource "digitalocean_database_replica" "redis_nyc" {
-  cluster_id = digitalocean_database_cluster.redis_fra.id
-  name       = "redis-nyc"
-  size       = "db-s-1vcpu-1gb"
-  region     = "nyc3"
 }
