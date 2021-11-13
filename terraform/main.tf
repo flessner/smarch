@@ -17,11 +17,3 @@ resource "digitalocean_project" "smarch" {
   name      = "smarch"
   resources = []
 }
-
-output "api_nyc_ingress" {
-  value = digitalocean_app.app_api_nyc.default_ingress
-}
-
-output "api_nyc_url" {
-  value = digitalocean_app.app_api_nyc.live_url
-}
