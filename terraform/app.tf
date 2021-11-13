@@ -24,11 +24,12 @@ resource "digitalocean_app" "app_api_fra" {
     region = "fra"
 
     service {
-      name          = "main"
-      source_dir    = "api"
-      http_port     = "6060"
-      build_command = "npm run build"
-      run_command   = "npm run start"
+      name               = "main"
+      source_dir         = "api"
+      http_port          = "6060"
+      instance_size_slug = "basic-xxs"
+      build_command      = "npm run build"
+      run_command        = "npm run start"
 
       github {
         deploy_on_push = true
@@ -45,11 +46,12 @@ resource "digitalocean_app" "app_api_nyc" {
     region = "nyc"
 
     service {
-      name          = "main"
-      source_dir    = "api"
-      http_port     = "6060"
-      build_command = "npm run build"
-      run_command   = "npm run start"
+      name               = "main"
+      source_dir         = "api"
+      http_port          = "6060"
+      instance_size_slug = "basic-xxs"
+      build_command      = "npm run build"
+      run_command        = "npm run start"
 
       github {
         deploy_on_push = true
