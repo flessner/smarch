@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "hyper-express": "^5.3.2",
+    "ioredis": "^4.28.0",
     "uWebSockets.js": "git+https://github.com/uNetworking/uWebSockets.js#v20.4.0"
   },
   "devDependencies": {
+    "@types/ioredis": "^4.28.1",
     "@types/node": "^16.11.7",
     "dotenv": "^10.0.0",
     "ts-node-dev": "^1.1.8",
