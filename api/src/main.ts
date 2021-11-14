@@ -43,3 +43,4 @@ server.ws("/api", {
 server.listen(parseInt(env.PORT))
   .then(() => { console.log("🚀 Listening on port " + env.PORT) })
   .catch(err => { console.error(err) })
+
