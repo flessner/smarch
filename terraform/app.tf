@@ -1,6 +1,7 @@
 resource "digitalocean_app" "app_web_cloud" {
   spec {
-    name = "app-web-cloud"
+    name   = "app-web-cloud"
+    region = "nyc"
 
     static_site {
       name              = "main"
@@ -59,13 +60,4 @@ resource "digitalocean_app" "app_api_nyc" {
       }
     }
   }
-}
-
-resource "digitalocean_database_cluster" "redis_nyc" {
-  name       = "redis-nyc"
-  engine     = "redis"
-  version    = 6
-  size       = "db-s-1vcpu-1gb"
-  region     = "nyc"
-  node_count = 1
 }
