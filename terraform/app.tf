@@ -23,6 +23,11 @@ resource "digitalocean_app" "app_api_fra" {
     name   = "app-api-fra"
     region = "fra"
 
+    env {
+      key   = "APP_LOCATION"
+      value = "fra"
+    }
+
     service {
       name               = "main"
       source_dir         = "api"
@@ -44,6 +49,11 @@ resource "digitalocean_app" "app_api_nyc" {
   spec {
     name   = "app-api-nyc"
     region = "nyc"
+
+    env {
+      key   = "APP_LOCATION"
+      value = "nyc"
+    }
 
     service {
       name               = "main"
