@@ -1,22 +1,24 @@
 import * as HyperExpress from "hyper-express"
 
+if (process.env.TS_NODE_DEV) {
+  require("dotenv").config()
+}
+
 const env = process.env
 const server = new HyperExpress.Server()
 
 require('./auth').init(server)
 require('./gate').init(server)
 
-console.log(env)
-
 server.get("/meta", (req, res) => {
   res
     .status(200)
     .json({
       version: env.npm_package_version,
-      port: env.PORT
+      location: env.API_LOCATION
     })
 })
 
-server.listen(6060)
-  .then(() => { console.log("🚀 Listening on port 6060") })
+server.listen(parseInt(env.PORT))
+  .then(() => { console.log("🚀 Listening on port " + env.PORT) })
   .catch(err => { console.error(err) })

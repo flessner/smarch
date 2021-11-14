@@ -24,7 +24,7 @@ resource "digitalocean_app" "app_api_fra" {
     region = "fra"
 
     env {
-      key   = "APP_LOCATION"
+      key   = "API_LOCATION"
       value = "fra"
     }
 
@@ -51,7 +51,7 @@ resource "digitalocean_app" "app_api_nyc" {
     region = "nyc"
 
     env {
-      key   = "APP_LOCATION"
+      key   = "API_LOCATION"
       value = "nyc"
     }
 
