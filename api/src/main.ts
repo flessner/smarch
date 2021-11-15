@@ -9,10 +9,6 @@ if (process.env.TS_NODE_DEV) {
 const server = new HyperExpress.Server()
 const env = process.env
 
-console.log(env.REDIS_HOST)
-console.log(env.REDIS_PASS)
-console.log(env.REDIS_USER)
-console.log(env.REDIS_PORT)
 const db = {
   redis: new Redis(`rediss://${env.REDIS_USER}:${env.REDIS_PASS}@${env.REDIS_HOST}:${env.REDIS_PORT}`),
   redisSub: new Redis(`rediss://${env.REDIS_USER}:${env.REDIS_PASS}@${env.REDIS_HOST}:${env.REDIS_PORT}`),
