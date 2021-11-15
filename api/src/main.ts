@@ -2,17 +2,19 @@ import * as HyperExpress from "hyper-express"
 import { WSRouteOptions } from "hyper-express/types/components/router/Router"
 import * as Redis from "ioredis"
 
-if (process.env.TS_NODE_DEV) {
-  require("dotenv").config()
-}
-
 const server = new HyperExpress.Server()
 const env = process.env
 
+let redisAuth = `rediss://${env.REDIS_USER}:${env.REDIS_PASS}@${env.REDIS_HOST}:${env.REDIS_PORT}` || {}
+if (process.env.TS_NODE_DEV) {
+  require("dotenv").config()
+  redisAuth = { host: env.REDIS_HOST, password: env.REDIS_PASS, port: env.REDIS_PORT }
+}
+
 const db = {
-  redis: new Redis(`rediss://${env.REDIS_USER}:${env.REDIS_PASS}@${env.REDIS_HOST}:${env.REDIS_PORT}`),
-  redisSub: new Redis(`rediss://${env.REDIS_USER}:${env.REDIS_PASS}@${env.REDIS_HOST}:${env.REDIS_PORT}`),
-  redisPub: new Redis(`rediss://${env.REDIS_USER}:${env.REDIS_PASS}@${env.REDIS_HOST}:${env.REDIS_PORT}`),
+  redis: new Redis(redisAuth),
+  redisSub: new Redis(redisAuth),
+  redisPub: new Redis(redisAuth),
   pub: (channel: string, message: string) => db.redisPub.publish(channel, message),
   sub: (channel: string) => db.redisSub.subscribe(channel),
   msg: (callback) => db.redisSub.on("message", callback)
