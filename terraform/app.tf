@@ -36,7 +36,12 @@ resource "digitalocean_app" "app_api_fra" {
       value = digitalocean_database_cluster.redis_nyc.port
     }
     env {
-      key   = "REDIS_PASSWORD"
+      key   = "REDIS_USER"
+      value = digitalocean_database_cluster.redis_nyc.user
+      type  = "SECRET"
+    }
+    env {
+      key   = "REDIS_PASS"
       value = digitalocean_database_cluster.redis_nyc.password
       type  = "SECRET"
     }
@@ -76,7 +81,12 @@ resource "digitalocean_app" "app_api_nyc" {
       value = digitalocean_database_cluster.redis_nyc.port
     }
     env {
-      key   = "REDIS_PASSWORD"
+      key   = "REDIS_USER"
+      value = digitalocean_database_cluster.redis_nyc.user
+      type  = "SECRET"
+    }
+    env {
+      key   = "REDIS_PASS"
       value = digitalocean_database_cluster.redis_nyc.password
       type  = "SECRET"
     }
