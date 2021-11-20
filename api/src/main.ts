@@ -35,14 +35,13 @@ server.get("/meta", (req, res) => {
   })
 })
 
-db.sub("meta")
-server.ws("/api", {
-  idle_timeout: 0
-} as WSRouteOptions, (ws) => {
-  db.msg((channel, message) => ws.send(message))
-})
+// db.sub("meta")
+// server.ws("/api", {
+//   idle_timeout: 0
+// } as WSRouteOptions, (ws) => {
+//   db.msg((channel, message) => ws.send(message))
+// })
 
 server.listen(parseInt(env.PORT))
   .then(() => { console.log("🚀 Listening on port " + env.PORT) })
   .catch(err => { console.error(err) })
-

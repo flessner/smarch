@@ -1,11 +1,17 @@
 version: "3.2"
 services:
 
- redis:
+  redis:
     image: "redis:alpine"
     command: redis-server --requirepass password
     ports:
      - "6379:6379"
-
     environment:
      - REDIS_REPLICATION_MODE=master
+
+  gate-eth:
+    image: ethereum/client-go
+    command: --syncmode light --http --http.port 8545
+    ports:
+      - "30303:30303"
+      - "8545:8545"

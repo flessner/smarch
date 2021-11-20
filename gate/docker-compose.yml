@@ -1,9 +1,0 @@
-services:
-  eth:
-    build:
-      context: .
-      dockerfile: eth.dockerfile
-  bsc:
-    build:
-      context: .
-      dockerfile: bsc.dockerfile

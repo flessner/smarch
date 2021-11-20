@@ -39,7 +39,7 @@
         <div class="px-6 h-16 flex flex-col justify-center">
           <p class="text-xl select-none">
             <span class="font-bold text-ui-l0">{company}</span>
-            <span class="font-normal text-ui-l1">{product}</span>
+            <span class="text-ui-l1">{product}</span>
           </p>
         </div>
       </a>

@@ -11,16 +11,7 @@
       <div class="w-full">
         <h3 class="pt-0">Gate</h3>
         <Column>
-          <a href="/gate/ceramic" class="text-ui-l0">Ceramic</a>
           <a href="/gate/ethereum" class="text-ui-l0">Ethereum</a>
-        </Column>
-      </div>
-      <div class="w-full">
-        <h3 class="pt-0">Storage</h3>
-        <Column>
-          <a href="/storage/ceramic" class="text-ui-l0">Ceramic</a>
-          <a href="/storage/ipfs" class="text-ui-l0">IPFS</a>
-          <a href="/storage/textile" class="text-ui-l0">Textile</a>
         </Column>
       </div>
       <div class="w-full">

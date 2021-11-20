@@ -5,8 +5,8 @@ export default defineConfig({
   darkMode: "class", // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'sans': ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"],
-      'mono': ["IBM Plex Mono", "monospace"]
+      'sans': ["Inter", "Arial", "sans-serif"],
+      'mono': ["DM Mono", "monospace"]
     },
     colors: {
       ui: {

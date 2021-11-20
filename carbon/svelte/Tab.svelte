@@ -39,6 +39,6 @@
     </Row>
   </Layout>
   <Layout wide class="h-16 -mt-16 overflow-hidden">
-    <h4 class="pt-20 xl:pt-5 duration-300 select-none">{label}</h4>
+    <h4 class="xl:ml-0 -ml-32 duration-300 pt-5 select-none">{label}</h4>
   </Layout>
 </div>
