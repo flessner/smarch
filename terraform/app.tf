@@ -3,6 +3,11 @@ resource "digitalocean_app" "app_web_cloud" {
     name   = "app-web-cloud"
     region = "nyc"
 
+    domain {
+      name = "cloud.smarch.net"
+      type = "PRIMARY"
+    }
+
     static_site {
       name              = "main"
       source_dir        = "web/cloud"
@@ -22,6 +27,11 @@ resource "digitalocean_app" "app_api_fra" {
   spec {
     name   = "app-api-fra"
     region = "fra"
+
+    domain {
+      name = "eu.api.smarch.net"
+      type = "PRIMARY"
+    }
 
     env {
       key   = "API_LOCATION"
