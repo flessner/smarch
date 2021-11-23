@@ -3,7 +3,7 @@
   export { className as class };
 </script>
 
-<div class="w-full {className} rounded bg-ui-l1 dark:bg-ui-d1 ph" />
+<div class="w-full {className} rounded-lg bg-ui-l1 dark:bg-ui-d1 ph" />
 
 <style>
   .ph {

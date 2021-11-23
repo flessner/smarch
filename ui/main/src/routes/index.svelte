@@ -12,21 +12,21 @@
 <Layout>
   <h2>Projects</h2>
   <a href="https://treasury.smarch.net">
-    <Row class="h-16 mb-4 bg-ui-d0 rounded justify-between">
-      <h3 class="py-0 px-4 my-auto text-ui-l0">Treasury</h3>
-      <ArrowUpRight24 class="mr-4 my-auto text-ui-l0" />
+    <Row class="h-16 mb-4 bg-ui-l1 rounded-lg justify-between">
+      <h3 class="py-0 px-4 my-auto">Treasury</h3>
+      <ArrowUpRight24 class="mr-4 my-auto text-ui-d0" />
     </Row>
   </a>
   <a href="https://cloud.smarch.net">
-    <Row class="h-16 my-4 bg-ui-d0 rounded justify-between">
-      <h3 class="py-0 px-4 my-auto text-ui-l0">Cloud</h3>
-      <ArrowUpRight24 class="mr-4 my-auto text-ui-l0" />
+    <Row class="h-16 my-4 bg-ui-l1 rounded-lg justify-between">
+      <h3 class="py-0 px-4 my-auto">Cloud</h3>
+      <ArrowUpRight24 class="mr-4 my-auto text-ui-d0" />
     </Row>
   </a>
   <a href="https://treasury.smarch.net">
-    <Row class="h-16 my-4 bg-ui-d0 rounded justify-between">
-      <h3 class="py-0 px-4 my-auto text-ui-l0">Explorer</h3>
-      <ArrowUpRight24 class="mr-4 my-auto text-ui-l0" />
+    <Row class="h-16 my-4 bg-ui-l1 rounded-lg justify-between">
+      <h3 class="py-0 px-4 my-auto">Explorer</h3>
+      <ArrowUpRight24 class="mr-4 my-auto text-ui-d0" />
     </Row>
   </a>
 </Layout>

@@ -2,8 +2,8 @@
   import { Button, Column } from "../svelte";
   import { createPopper } from "@popperjs/core";
   import { onMount } from "svelte";
-  import CaretDownGlyph from "carbon-icons-svelte/lib/CaretDownGlyph";
 
+  export let icon;
   export let open = false;
   export let values;
   export let label = values[0].label;
@@ -39,7 +39,7 @@
   <Button
     id={popcornId}
     {label}
-    icon={CaretDownGlyph}
+    {icon}
     onClick={() => {
       open = !open;
     }}
@@ -47,7 +47,7 @@
 </div>
 
 <div id={tooltipId} class="{openCss} p-1">
-  <div class="backdrop-blur-lg py-2 rounded border border-ui-d1">
+  <div class="backdrop-blur-lg py-2 rounded-lg border border-ui-d1">
     {#each values as entry}
       <div
         on:click={() => {
