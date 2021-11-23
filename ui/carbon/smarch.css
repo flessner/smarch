@@ -10,6 +10,7 @@ body {
   @apply dark:text-ui-l1;
   @apply selection:bg-primary;
   @apply text-base;
+  @apply font-medium;
 }
 a {
   @apply text-primary;
@@ -20,9 +21,9 @@ blockquote {
 }
 /* HEADINGS */
 h1, h2, h3, h4 {
-  @apply font-bold;
-  @apply text-ui-l0;
-  @apply font-cloud;
+  @apply font-extrabold;
+  @apply text-ui-d0;
+  @apply dark:text-ui-l0;
 }
 h1 {
   @apply text-5xl;

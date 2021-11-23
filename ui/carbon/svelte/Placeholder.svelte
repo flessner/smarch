@@ -3,21 +3,25 @@
   export { className as class };
 </script>
 
-<div class="w-full {className} rounded placeholder" />
+<div class="w-full {className} rounded bg-ui-l1 dark:bg-ui-d1 ph" />
 
 <style>
-  .placeholder {
-    background-image: linear-gradient(90deg, #363636, #0000, #363636, #0000);
-    background-size: 300% 100%;
-    animation: placeholder-stroke 1.5s infinite ease-in-out;
+  .ph {
+    animation: ph-blink 2s infinite ease-in-out;
   }
 
-  @keyframes placeholder-stroke {
+  @keyframes ph-blink {
     0% {
-      background-position: 0 0;
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
     }
     100% {
-      background-position: 100% 0;
+      opacity: 0;
     }
   }
 </style>

@@ -38,8 +38,10 @@
       <a {href} class="cursor-pointer">
         <div class="px-6 h-16 flex flex-col justify-center">
           <p class="text-xl select-none">
-            <span class="font-bold text-ui-l0">{company}</span>
-            <span class="text-ui-l1">{product}</span>
+            <span class="font-extrabold text-ui-d0 dark:text-ui-l0"
+              >{company}</span
+            >
+            <span class="text-ui-d1 dark:text-ui-l1">{product}</span>
           </p>
         </div>
       </a>

@@ -10,7 +10,32 @@ resource "digitalocean_app" "app_web_cloud" {
 
     static_site {
       name              = "main"
-      source_dir        = "web/cloud"
+      source_dir        = "ui/cloud"
+      build_command     = "npm run build"
+      catchall_document = "index.html"
+
+      github {
+        deploy_on_push = true
+        branch         = "master"
+        repo           = "flessner/smarch"
+      }
+    }
+  }
+}
+
+resource "digitalocean_app" "app_web_main" {
+  spec {
+    name   = "app-web-cloud"
+    region = "nyc"
+
+    domain {
+      name = "smarch.net"
+      type = "PRIMARY"
+    }
+
+    static_site {
+      name              = "main"
+      source_dir        = "ui/main"
       build_command     = "npm run build"
       catchall_document = "index.html"
 
