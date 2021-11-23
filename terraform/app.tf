@@ -72,12 +72,10 @@ resource "digitalocean_app" "app_api_fra" {
     env {
       key   = "REDIS_USER"
       value = digitalocean_database_cluster.redis_nyc.user
-      type  = "SECRET"
     }
     env {
       key   = "REDIS_PASS"
       value = digitalocean_database_cluster.redis_nyc.password
-      type  = "SECRET"
     }
 
     service {
