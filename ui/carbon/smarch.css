@@ -75,7 +75,7 @@ input {
 }
 button {
   @apply focus:outline-none;
-  @apply rounded;
+  @apply rounded-lg;
 }
 select {
   @apply bg-ui-d0;
@@ -83,7 +83,7 @@ select {
   @apply border-ui-d1;
   @apply h-8;
   @apply px-8;
-  @apply rounded;
+  @apply rounded-lg;
   @apply focus:outline-none;
 }
 

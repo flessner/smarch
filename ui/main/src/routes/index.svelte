@@ -1,12 +1,12 @@
 <script>
   import "virtual:windi.css";
   import "carbon/smarch.css";
-  import { Layout, Row } from "carbon/svelte";
+  import { Layout, Row, Button } from "carbon/svelte";
   import ArrowUpRight24 from "carbon-icons-svelte/lib/ArrowUpRight24";
 </script>
 
-<Layout class="h-64 flex flex-col justify-center bg-primary">
-  <h1 class="text-ui-l0">Blockchain.<br />Revolution.<br />Now.</h1>
+<Layout class="h-64 flex flex-col justify-center">
+  <h1>Blockchain.<br />Revolution.<br />Now.</h1>
 </Layout>
 
 <Layout>
@@ -29,4 +29,6 @@
       <ArrowUpRight24 class="mr-4 my-auto text-ui-d0" />
     </Row>
   </a>
+  <h2>Socials</h2>
+  <p>TBD</p>
 </Layout>
