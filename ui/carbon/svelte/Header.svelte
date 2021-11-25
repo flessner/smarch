@@ -35,7 +35,7 @@
     <!-- HEADER -->
     <Row class="h-16 w-full justify-between">
       <a {href} class="cursor-pointer">
-        <div class="px-6 h-16 flex flex-col justify-center">
+        <div class="px-8 h-16 flex flex-col justify-center">
           <p class="text-xl select-none">
             <span class="font-extrabold text-ui-d0 dark:text-ui-l0"
               >{company}</span
