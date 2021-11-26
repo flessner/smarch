@@ -4,31 +4,26 @@
 
   const socials = [
     {
-      icon: "assets/3d-discord.png",
+      icon: "assets/twitter.png",
+      href: "https://twitter.com",
+    },
+    {
+      icon: "assets/discord.png",
       href: "https://discord.app",
     },
     {
-      icon: "assets/3d-twitter.png",
+      icon: "assets/telegram.png",
       href: "https://twitter.com",
     },
     {
-      icon: "assets/3d-telegram.png",
-      href: "https://twitter.com",
-    },
-    {
-      icon: "assets/3d-medium.png",
+      icon: "assets/medium.png",
       href: "https://twitter.com",
     },
   ];
 </script>
 
-<Layout class="h-64 flex flex-row overflow-hidden">
-  <h1 class="w-full my-auto">Blockchain.<br />Revolution.<br />Now.</h1>
-  <img
-    class="h-64 mr-8 hidden sm:flex"
-    alt="Symbolic light bulb"
-    src="assets/3d-bulb.png"
-  />
+<Layout class="h-64 flex flex-col justify-center">
+  <h1>Blockchain.<br />Revolution.<br />Now.</h1>
 </Layout>
 
 <Layout>
@@ -46,14 +41,10 @@
     </Row>
   </a>
   <h2>Socials</h2>
-  <Row class="justify-around">
+  <Row class="justify-between">
     {#each socials as social}
       <a href={social.href}>
-        <img
-          class="h-16 md:h-20 lg:h-24"
-          src={social.icon}
-          alt="Social Media"
-        />
+        <img class="h-10" src={social.icon} alt="Social Media" />
       </a>
     {/each}
   </Row>
