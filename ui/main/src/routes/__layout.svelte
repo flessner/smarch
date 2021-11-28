@@ -10,7 +10,6 @@
   import Discord from "carbon-icons-svelte/lib/LogoDiscord32";
   import Medium from "carbon-icons-svelte/lib/LogoMedium32";
   import Twitter from "carbon-icons-svelte/lib/LogoTwitter32";
-  import YouTube from "carbon-icons-svelte/lib/LogoYoutube32";
 
   const links = [
     {
@@ -58,9 +57,6 @@
           </a>
           <a href="medium.com" class="my-auto">
             <Medium class="text-ui-l1" />
-          </a>
-          <a href="youtube.com" class="my-auto">
-            <YouTube class="text-ui-l1" />
           </a>
         </Row>
       </Row>
