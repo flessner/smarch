@@ -18,6 +18,6 @@
   }
 </script>
 
-<div class="{css} px-8 {className}">
+<div class="{css} {className} px-4 md:px-8">
   <slot />
 </div>

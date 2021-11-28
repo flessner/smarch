@@ -7,20 +7,7 @@
 
 <Header company="smarch" product="Cloud" href="/">
   <Layout slot="sidebar" class="py-8">
-    <Row>
-      <div class="w-full">
-        <h3 class="pt-0">Gate</h3>
-        <Column>
-          <a href="/gate/ethereum" class="text-ui-l0">Ethereum</a>
-        </Column>
-      </div>
-      <div class="w-full">
-        <h3 class="pt-0">Account</h3>
-        <Column>
-          <a href="/storage/ceramic" class="text-ui-l0">Logout</a>
-        </Column>
-      </div>
-    </Row>
+    <p class="text-ui-d0">TBD</p>
   </Layout>
 </Header>
 

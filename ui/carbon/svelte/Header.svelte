@@ -2,8 +2,9 @@
   import { writable } from "svelte/store";
   import { Column, Row } from "../svelte";
 
-  export let icon;
-  export let iconClose;
+  import Close from "carbon-icons-svelte/lib/Close24";
+  import Menu from "carbon-icons-svelte/lib/Menu24";
+
   export let href = undefined;
   export let url = undefined;
   export let company = "";
@@ -21,6 +22,8 @@
       sidebarOpen = false;
     });
   }
+
+  console.log(window.location);
 </script>
 
 <svelte:window bind:scrollY={$y} />
@@ -30,17 +33,17 @@
 <Column class="fixed z-20 top-0 bottom-0 w-full pointer-events-none">
   <div
     class="
-        h-auto backdrop-filter backdrop-blur-xl pointer-events-auto overflow-hidden"
+        h-auto bg-ui-d0 dark:bg-ui-l0 pointer-events-auto overflow-hidden"
   >
     <!-- HEADER -->
     <Row class="h-16 w-full justify-between">
       <a {href} class="cursor-pointer">
-        <div class="px-8 h-16 flex flex-col justify-center">
+        <div class="px-4 md:px-8 h-16 flex flex-col justify-center">
           <p class="text-xl select-none">
-            <span class="font-extrabold text-ui-d0 dark:text-ui-l0"
+            <span class="font-extrabold text-ui-l0 dark:text-ui-d0"
               >{company}</span
             >
-            <span class="text-ui-d1 dark:text-ui-l1">{product}</span>
+            <span class="text-ui-l1 dark:text-ui-d1">{product}</span>
           </p>
         </div>
       </a>
@@ -52,9 +55,9 @@
         >
           <Column class="h-full justify-center">
             {#if sidebarOpen}
-              <svelte:component this={iconClose} class="text-ui-l0" />
+              <Close class="text-ui-l0 dark:text-ui-d0" />
             {:else}
-              <svelte:component this={icon} class="text-ui-l0" />
+              <Menu class="text-ui-l0 dark:text-ui-d0" />
             {/if}
           </Column>
         </div>

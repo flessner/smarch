@@ -10,14 +10,19 @@ body {
   @apply dark:text-ui-l1;
   @apply selection:bg-primary;
   @apply text-base;
-  @apply font-medium;
+  @apply font-normal;
 }
 a {
   @apply text-primary;
 }
 blockquote {
-  @apply font-bold;
+  @apply text-ui-d0;
+  @apply dark:text-ui-l0;
   @apply font-mono;
+  @apply pl-4;
+  @apply py-2
+  @apply border-l-4;
+  @apply border-ui-l1;
 }
 /* HEADINGS */
 h1, h2, h3, h4 {
