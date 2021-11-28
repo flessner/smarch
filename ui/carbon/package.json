@@ -5,7 +5,6 @@
     "node": "16.x"
   },
   "dependencies": {
-    "carbon-icons-svelte": "^10.38.0",
     "@popperjs/core": "^2.10.2",
     "svelte": "^3.44.2"
   }

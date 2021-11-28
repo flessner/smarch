@@ -16,6 +16,7 @@
     "vite-plugin-windicss": "^1.4.12"
   },
   "dependencies": {
-    "@self.id/web": "^0.1.0"
+    "@self.id/web": "^0.1.0",
+    "carbon-icons-svelte": "^10.38.0"
   }
 }

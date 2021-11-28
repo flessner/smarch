@@ -20,8 +20,7 @@ const config = {
       resolve: {
         alias: {
           "carbon": path.resolve(__dirname, '../carbon'),
-          "@popperjs/core": path.resolve(__dirname, '../carbon/node_modules/@popperjs/core'),
-          "carbon-icons-svelte": path.resolve(__dirname, '../carbon/node_modules/carbon-icons-svelte'),
+          "@popperjs/core": path.resolve(__dirname, '../carbon/node_modules/@popperjs/core')
         }
       },
       plugins: [

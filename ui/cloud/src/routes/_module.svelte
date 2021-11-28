@@ -2,10 +2,13 @@
   import { Header, Layout, Column, Row, Button } from "carbon/svelte";
   import { authenticated, login } from "../stores/ceramic";
 
+  import Menu from "carbon-icons-svelte/lib/Menu32";
+  import Close from "carbon-icons-svelte/lib/Close32";
+
   let testing = true;
 </script>
 
-<Header company="smarch" product="Cloud" href="/">
+<Header company="smarch" product="Cloud" href="/" icon={Menu} iconClose={Close}>
   <Layout slot="sidebar" class="py-8">
     <p class="text-ui-d0">TBD</p>
   </Layout>

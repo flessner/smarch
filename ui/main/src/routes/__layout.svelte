@@ -4,10 +4,13 @@
 
   import { Header, Layout, Column, Row } from "carbon/svelte";
 
+  import Menu from "carbon-icons-svelte/lib/Menu32";
+  import Close from "carbon-icons-svelte/lib/Close32";
+
   import Discord from "carbon-icons-svelte/lib/LogoDiscord32";
   import Medium from "carbon-icons-svelte/lib/LogoMedium32";
   import Twitter from "carbon-icons-svelte/lib/LogoTwitter32";
-  import YouTube from "carbon-icons-svelte/lib/LogoYouTube32";
+  import YouTube from "carbon-icons-svelte/lib/LogoYoutube32";
 
   const links = [
     {
@@ -26,7 +29,7 @@
 </script>
 
 <Column class="min-h-screen justify-between">
-  <Header company="smarch" href="/">
+  <Header company="smarch" href="/" icon={Menu} iconClose={Close}>
     <Layout slot="sidebar" class="pt-4 pb-8">
       <Column class="pl-4 border-l-4 py-2 border-ui-d1">
         {#each links as link}
