@@ -4,7 +4,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "cd ../carbon && npm i && cd ../cloud && vite build",
     "preview": "vite preview",
     "dev": "vite"
   },

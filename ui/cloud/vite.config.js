@@ -11,6 +11,11 @@ const production = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   clearScreen: false,
+  resolve: {
+    alias: {
+      "carbon-icons-svelte": path.resolve(__dirname, './node_modules/carbon-icons-svelte'),
+    }
+  },
   plugins: [
     WindiCSS({
       scan: {
