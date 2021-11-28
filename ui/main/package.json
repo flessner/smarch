@@ -19,7 +19,6 @@
     "vite-plugin-windicss": "^1.5.1"
   },
   "dependencies": {
-    "carbon": "file:../carbon",
-    "carbon-icons-svelte": "^10.38.0"
+    "carbon": "file:../carbon"
   }
 }

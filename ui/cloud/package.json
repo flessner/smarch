@@ -4,9 +4,9 @@
     "node": "16.x"
   },
   "scripts": {
+    "dev": "vite",
     "build": "cd ../carbon && npm i && cd ../cloud && vite build",
-    "preview": "vite preview",
-    "dev": "vite"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@roxi/routify": "^3.0.0-next.1",
@@ -16,7 +16,6 @@
     "vite-plugin-windicss": "^1.4.12"
   },
   "dependencies": {
-    "@self.id/web": "^0.1.0",
-    "carbon": "file:../carbon"
+    "@self.id/web": "^0.1.0"
   }
 }

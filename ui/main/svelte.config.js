@@ -3,7 +3,6 @@ import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex'
 
 import WindiCSS from 'vite-plugin-windicss'
-
 import path from 'path'
 const __dirname = path.resolve();
 
@@ -20,7 +19,9 @@ const config = {
     vite: {
       resolve: {
         alias: {
-          "carbon-icons-svelte": path.resolve(__dirname, './node_modules/carbon-icons-svelte'),
+          "carbon": path.resolve(__dirname, '../carbon'),
+          "@popperjs/core": path.resolve(__dirname, '../carbon/node_modules/@popperjs/core'),
+          "carbon-icons-svelte": path.resolve(__dirname, '../carbon/node_modules/carbon-icons-svelte'),
         }
       },
       plugins: [

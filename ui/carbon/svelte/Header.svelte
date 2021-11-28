@@ -2,9 +2,8 @@
   import { writable } from "svelte/store";
   import { Column, Row } from "../svelte";
 
-  import Close from "carbon-icons-svelte/lib/Close24";
-  import Menu from "carbon-icons-svelte/lib/Menu24";
-
+  export let icon;
+  export let iconClose;
   export let href = undefined;
   export let url = undefined;
   export let company = "";
@@ -55,9 +54,15 @@
         >
           <Column class="h-full justify-center">
             {#if sidebarOpen}
-              <Close class="text-ui-l0 dark:text-ui-d0" />
+              <svelte:component
+                this={iconClose}
+                class="text-ui-l0 dark:text-ui-d0"
+              />
             {:else}
-              <Menu class="text-ui-l0 dark:text-ui-d0" />
+              <svelte:component
+                this={icon}
+                class="text-ui-l0 dark:text-ui-d0"
+              />
             {/if}
           </Column>
         </div>

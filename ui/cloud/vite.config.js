@@ -10,10 +10,11 @@ const __dirname = path.resolve();
 const production = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
-  clearScreen: false,
   resolve: {
     alias: {
-      "carbon-icons-svelte": path.resolve(__dirname, './node_modules/carbon-icons-svelte'),
+      "carbon": path.resolve(__dirname, '../carbon'),
+      "@popperjs/core": path.resolve(__dirname, '../carbon/node_modules/@popperjs/core'),
+      "carbon-icons-svelte": path.resolve(__dirname, '../carbon/node_modules/carbon-icons-svelte'),
     }
   },
   plugins: [
