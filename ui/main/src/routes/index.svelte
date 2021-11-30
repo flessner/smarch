@@ -17,7 +17,7 @@
 
 <div class="bg-primary overflow-hidden">
   <Layout invert class="h-64 flex flex-col justify-center">
-    <h1 class="text-ui-l0">Blockchain.<br />Revolution.<br />Now.</h1>
+    <h1 class="text-ui-l0">Making a<br />Difference<br />for Web3.</h1>
   </Layout>
 </div>
 
