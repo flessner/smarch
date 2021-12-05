@@ -1,6 +1,6 @@
-resource "digitalocean_app" "app_web_cloud" {
+resource "digitalocean_app" "web_cloud" {
   spec {
-    name   = "app-web-cloud"
+    name   = "smarch-web-cloud"
     region = "nyc"
 
     domain {
@@ -23,9 +23,9 @@ resource "digitalocean_app" "app_web_cloud" {
   }
 }
 
-resource "digitalocean_app" "app_web_main" {
+resource "digitalocean_app" "web_main" {
   spec {
-    name   = "app-web-main"
+    name   = "smarch-web-main"
     region = "nyc"
 
     domain {
@@ -47,9 +47,9 @@ resource "digitalocean_app" "app_web_main" {
   }
 }
 
-resource "digitalocean_app" "app_api_fra" {
+resource "digitalocean_app" "api_fra" {
   spec {
-    name   = "app-api-fra"
+    name   = "smarch-api-fra"
     region = "fra"
 
     domain {

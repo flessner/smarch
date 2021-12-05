@@ -13,20 +13,15 @@ provider "digitalocean" {
   token = var.DO_PAT
 }
 
-resource "digitalocean_project" "smarch" {
-  name      = "smarch"
-  resources = []
-}
-
 // URLs
 output "url_web_main" {
-  value = digitalocean_app.app_web_main.default_ingress
+  value = digitalocean_app.web_main.default_ingress
 }
 
 output "url_web_cloud" {
-  value = digitalocean_app.app_web_cloud.default_ingress
+  value = digitalocean_app.web_cloud.default_ingress
 }
 
 output "url_api_fra" {
-  value = digitalocean_app.app_api_fra.default_ingress
+  value = digitalocean_app.api_fra.default_ingress
 }
