@@ -10,7 +10,7 @@ resource "digitalocean_app" "web_cloud" {
 
     static_site {
       name              = "main"
-      source_dir        = "ui/cloud"
+      source_dir        = "/ui/cloud"
       build_command     = "npm run build"
       catchall_document = "index.html"
 
@@ -35,7 +35,7 @@ resource "digitalocean_app" "web_main" {
 
     static_site {
       name          = "main"
-      source_dir    = "ui/main"
+      source_dir    = "/ui/main"
       build_command = "npm run build"
 
       github {
@@ -51,11 +51,6 @@ resource "digitalocean_app" "api_fra" {
   spec {
     name   = "smarch-api-fra"
     region = "fra"
-
-    domain {
-      name = "eu.api.smarch.net"
-      type = "PRIMARY"
-    }
 
     env {
       key   = "API_LOCATION"
