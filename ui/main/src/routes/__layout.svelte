@@ -30,6 +30,7 @@
 
 <Column class="min-h-screen justify-between">
   <Header company="smarch" href="/" icon={Menu} iconClose={Close}>
+    <!--
     <Layout slot="sidebar" class="pt-4 pb-8">
       <Column class="pl-4 border-l-4 py-2 border-ui-d1">
         {#each links as link}
@@ -39,6 +40,7 @@
         {/each}
       </Column>
     </Layout>
+    -->
   </Header>
 
   <div class="w-full flex-grow">
@@ -49,7 +51,7 @@
     <Layout class="h-32">
       <Row class="flex-wrap justify-between h-full">
         <h3 class="p-0 pt-2 md:pt-0 my-auto text-ui-l1">smarch</h3>
-        <Row class="justify-between w-full md:w-1/2 px-2">
+        <Row class="justify-between w-full md:w-1/2 px-2 filter blur-sm">
           <a href="discord.app" class="my-auto">
             <Discord class="text-ui-l1" />
           </a>
