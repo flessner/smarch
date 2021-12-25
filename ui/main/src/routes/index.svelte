@@ -40,7 +40,7 @@
   {#each working as project}
     <a href={project.href} target="_">
       <Row class="h-16 mb-4 bg-ui-l1 rounded-lg justify-between">
-        <h3 class="py-0 px-4 my-auto">{project.label}</h3>
+        <h3 class="py-0 px-6 my-auto">{project.label}</h3>
         <ArrowUpRight24 class="mr-4 my-auto text-ui-d0" />
       </Row>
     </a>

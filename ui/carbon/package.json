@@ -1,5 +1,5 @@
 {
-  "name": "carbon",
+  "name": "carbon-smarch",
   "type": "module",
   "engines": {
     "node": "16.x"
