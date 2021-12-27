@@ -36,18 +36,15 @@
     <!-- HEADER -->
     <Row class="h-16 w-full justify-between px-4 md:px-8">
       <a {href} class="cursor-pointer">
-        <Row class="h-full">
+        <Row class="h-full text-ui-l0 dark:text-ui-d0">
           {#if iconCompany}
             <Column class="h-full justify-center">
-              <svelte:component
-                this={iconCompany}
-                class="text-ui-l0 dark:text-ui-d0 mr-2"
-              />
+              <svelte:component this={iconCompany} class="mr-2" />
             </Column>
           {/if}
           <h4 class="select-none py-0 my-auto">
-            <span class="text-ui-l0 dark:text-ui-d0">{company}</span>
-            <span class="text-ui-l1 dark:text-ui-d1">{product}</span>
+            {company}
+            <span class="font-mono ml-2px uppercase">{product}</span>
           </h4>
         </Row>
       </a>
