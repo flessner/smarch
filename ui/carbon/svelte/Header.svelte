@@ -42,7 +42,7 @@
               <svelte:component this={iconCompany} class="mr-2" />
             </Column>
           {/if}
-          <h4 class="select-none py-0 my-auto">
+          <h4 class="select-none py-0 my-auto text-ui-l0 dark:text-ui-d0">
             {company}
             <span class="font-mono ml-2px uppercase">{product}</span>
           </h4>
