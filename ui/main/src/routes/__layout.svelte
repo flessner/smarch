@@ -4,6 +4,7 @@
 
   import { Header, Layout, Column, Row } from "carbon/svelte";
 
+  import Integration32 from "carbon-icons-svelte/lib/Integration32";
   import Menu from "carbon-icons-svelte/lib/Menu32";
   import Close from "carbon-icons-svelte/lib/Close32";
 
@@ -29,7 +30,13 @@
 </script>
 
 <Column class="min-h-screen justify-between">
-  <Header company="smarch" href="/" icon={Menu} iconClose={Close}>
+  <Header
+    company="smarch"
+    href="/"
+    iconCompany={Integration32}
+    iconOpen={Menu}
+    iconClose={Close}
+  >
     <!--
     <Layout slot="sidebar" class="pt-4 pb-8">
       <Column class="pl-4 border-l-4 py-2 border-ui-d1">
