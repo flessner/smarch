@@ -1,6 +1,6 @@
 resource "digitalocean_app" "web_cloud" {
   spec {
-    name   = "smarch-web-cloud"
+    name   = "smarch-cloud"
     region = "nyc"
 
     domain {

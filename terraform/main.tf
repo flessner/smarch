@@ -18,10 +18,10 @@ output "url_web" {
   value = digitalocean_app.web_main.default_ingress
 }
 
-output "url_web_cloud" {
+output "url_cloud" {
   value = digitalocean_app.web_cloud.default_ingress
 }
 
-output "url_api_fra" {
+output "url_api" {
   value = digitalocean_app.api_fra.default_ingress
 }
