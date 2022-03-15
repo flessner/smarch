@@ -14,7 +14,7 @@ provider "digitalocean" {
 }
 
 // URLs
-output "url_web_main" {
+output "url_web" {
   value = digitalocean_app.web_main.default_ingress
 }
 
