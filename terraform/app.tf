@@ -56,22 +56,6 @@ resource "digitalocean_app" "api_fra" {
       key   = "API_LOCATION"
       value = "fra"
     }
-    env {
-      key   = "REDIS_HOST"
-      value = digitalocean_database_cluster.redis_nyc.host
-    }
-    env {
-      key   = "REDIS_PORT"
-      value = digitalocean_database_cluster.redis_nyc.port
-    }
-    env {
-      key   = "REDIS_USER"
-      value = digitalocean_database_cluster.redis_nyc.user
-    }
-    env {
-      key   = "REDIS_PASS"
-      value = digitalocean_database_cluster.redis_nyc.password
-    }
 
     service {
       name               = "main"
