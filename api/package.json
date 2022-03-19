@@ -4,13 +4,20 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "node dist/main.js",
-    "dev": "ts-node-dev --respawn src/main.ts",
+    "start": "node dist/main.js | pino-pretty",
+    "dev": "ts-node-dev --respawn src/main.ts | pino-pretty",
     "build": "tsc"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "ethers": "^5.6.1",
     "hyper-express": "^5.3.2",
     "ioredis": "^4.28.0",
+    "knex": "^1.0.4",
+    "mysql2": "^2.3.3",
+    "needle": "^3.0.0",
+    "pino": "^7.9.1",
+    "pino-pretty": "^7.5.4",
     "uWebSockets.js": "git+https://github.com/uNetworking/uWebSockets.js#v20.4.0"
   },
   "devDependencies": {

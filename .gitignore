@@ -12,4 +12,9 @@ worker
 .terraform
 .terraform.lock.hcl
 
-# nest
+# sql
+smarch.session.sql
+api/.env
+
+#git
+/data

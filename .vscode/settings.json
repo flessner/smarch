@@ -1,0 +1,17 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "xoz7gh5e02xe.us-east-1.psdb.cloud/astrum?ssl={\"rejectUnauthorized\":true}",
+      "port": 3306,
+      "askForPassword": true,
+      "driver": "MySQL",
+      "name": "smarch",
+      "username": "98nb7ftwai85",
+      "connectString": "mysql://98nb7ftwai85:pscale_pw_0Y5sxnDUshrMSOl2uMjShvlvzY18fUCvrIm37hODxWE@xoz7gh5e02xe.us-east-1.psdb.cloud/astrum?ssl={\"rejectUnauthorized\":true}"
+    }
+  ]
+}
