@@ -14,7 +14,7 @@ worker
 
 # sql
 smarch.session.sql
-api/.env
+.env
 
 #git
 /data
