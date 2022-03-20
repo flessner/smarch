@@ -47,7 +47,7 @@ resource "digitalocean_app" "web_main" {
   }
 }
 
-resource "digitalocean_app" "api-nyc" {
+resource "digitalocean_app" "api_nyc" {
   spec {
     name   = "smarch-api-nyc"
     region = "nyc"
