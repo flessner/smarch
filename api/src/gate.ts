@@ -1,6 +1,10 @@
 import * as HyperExpress from "hyper-express"
 const axios = require('axios').default
 
+const allowedMethods = [
+  "eth_blockNumber", "eth_getBalance", "eth_getStorageAt", "eth_getCode", "eth_getTransactionCount", "eth_call", "eth_getBlockByHash", "eth_getBlockByNumber", "eth_getTransactionByHash"
+]
+
 export function init(frame) {
   const router = new HyperExpress.Router()
   const logger = frame.logger
@@ -12,11 +16,6 @@ export function init(frame) {
     logger.info(req.path)
     logger.debug(body)
 
-    if (body.jsonrpc != "2.0") {
-      res.status(400)
-      res.send("Invalid JSON-RPC Version")
-      return
-    }
     if (chainId != "43114") {
       res.status(400)
       res.send("Invalid Chain ID")
