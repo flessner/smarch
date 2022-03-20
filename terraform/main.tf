@@ -23,5 +23,5 @@ output "url_cloud" {
 }
 
 output "url_api" {
-  value = digitalocean_app.api_fra.default_ingress
+  value = digitalocean_app.api_nyc.default_ingress
 }

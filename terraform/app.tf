@@ -47,19 +47,14 @@ resource "digitalocean_app" "web_main" {
   }
 }
 
-resource "digitalocean_app" "api" {
+resource "digitalocean_app" "api-nyc" {
   spec {
-    name   = "smarch-api"
-    region = "fra"
+    name   = "smarch-api-nyc"
+    region = "nyc"
 
     domain {
-      name = "api.march.net"
+      name = "api.smarch.net"
       type = "PRIMARY"
-    }
-
-    env {
-      key   = "API_LOCATION"
-      value = "nyc"
     }
 
     service {
