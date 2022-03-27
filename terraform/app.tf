@@ -57,6 +57,23 @@ resource "digitalocean_app" "api_nyc" {
       type = "PRIMARY"
     }
 
+    env {
+      key   = "PS_HOST"
+      value = var.PS_HOST
+    }
+    env {
+      key   = "PS_USER"
+      value = var.PS_USER
+    }
+    env {
+      key   = "PS_PW"
+      value = var.PS_PW
+    }
+    env {
+      key   = "PS_DB"
+      value = var.PS_DB
+    }
+
     service {
       name               = "main"
       source_dir         = "api"

@@ -13,7 +13,6 @@ provider "digitalocean" {
   token = var.DO_PAT
 }
 
-// URLs
 output "url_web" {
   value = digitalocean_app.web_main.default_ingress
 }

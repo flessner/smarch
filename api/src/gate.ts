@@ -13,7 +13,6 @@ export function init(frame) {
     let chainId = req.params.id
     let body = await req.json()
 
-    logger.info(req.path)
     logger.debug(body)
 
     if (chainId != "43114") {
