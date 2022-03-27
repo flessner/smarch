@@ -47,13 +47,13 @@ resource "digitalocean_app" "web_main" {
   }
 }
 
-resource "digitalocean_app" "api_nyc" {
+resource "digitalocean_app" "api_ny" {
   spec {
-    name   = "smarch-api-nyc"
+    name   = "smarch-api-ny"
     region = "nyc"
 
     domain {
-      name = "na1.smarch.net"
+      name = "ny.smarch.net"
       type = "PRIMARY"
     }
 
@@ -91,13 +91,13 @@ resource "digitalocean_app" "api_nyc" {
   }
 }
 
-resource "digitalocean_app" "api_fra" {
+resource "digitalocean_app" "api_eu" {
   spec {
-    name   = "smarch-api-fra"
+    name   = "smarch-api-eu"
     region = "fra"
 
     domain {
-      name = "eu1.smarch.net"
+      name = "eu.smarch.net"
       type = "PRIMARY"
     }
 
