@@ -24,8 +24,13 @@ export function init(frame) {
     const { data } = await axios.post('https://api.avax.network/ext/bc/C/rpc', body)
     logger.debug(data)
 
-    res.status(200)
-    res.json(data)
+    if (data) {
+      res.status(200)
+      res.json(data)
+    } else {
+      res.status(400)
+      res.send("An unknown error occurred")
+    }
   })
 
   return router;
