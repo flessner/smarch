@@ -1,4 +1,8 @@
 variable "DO_PAT" {}
+variable "PS_HOST" {}
+variable "PS_USER" {}
+variable "PS_PW" {}
+variable "PS_DB" {}
 
 terraform {
   required_providers {
