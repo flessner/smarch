@@ -1,5 +1,6 @@
 # generic
 .DS_Store
+.vscode
 
 # node / web
 node_modules
