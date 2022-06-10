@@ -2,6 +2,7 @@
   import { Layout, Row } from "carbon/svelte";
 
   import ArrowUpRight24 from "carbon-icons-svelte/lib/ArrowUpRight24";
+  import ArrowDown32 from "carbon-icons-svelte/lib/ArrowDown32";
 
   const working = [
     {
@@ -11,11 +12,15 @@
   ];
 </script>
 
-<div class="bg-primary overflow-hidden">
-  <Layout invert class="h-64 flex flex-col justify-center">
-    <h1 class="text-ui-l0">Making a<br />Difference<br />for Web3.</h1>
+<div class="overflow-hidden -mt-16">
+  <Layout invert class="h-screen flex flex-col justify-center">
+    <h1 class="text-7xl text-center">Indexing the new Web</h1>
   </Layout>
 </div>
+
+<Row class="absolute w-full bottom-0 h-12 px-4 md:px-8 justify-center">
+  <ArrowDown32 class="animate-bounce animate-duration-1000" />
+</Row>
 
 <Layout class="pb-8">
   <Layout narrow class="-ml-4 md:-ml-8">

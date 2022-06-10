@@ -1,13 +1,18 @@
 # generic
 .DS_Store
 .vscode
+.idea
 
 # node / web
 node_modules
 .npm
 dist
-.routify
+build
+.npm
 worker
+
+# svelte
+.routify
 
 # terraform
 .terraform
@@ -16,6 +21,3 @@ worker
 # sql
 smarch.session.sql
 .env
-
-#git
-/data

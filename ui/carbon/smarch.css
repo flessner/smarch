@@ -5,44 +5,53 @@
 /* TEXT & GENERAL */
 body {
   @apply bg-ui-l0;
-  @apply dark:bg-ui-d0;
+  @apply dark: bg-ui-d0;
   @apply text-ui-d1;
-  @apply dark:text-ui-l1;
-  @apply selection:bg-primary;
+  @apply dark: text-ui-l1;
+  @apply selection: bg-primary;
   @apply text-base;
   @apply font-normal;
 }
+
 a {
   @apply text-primary;
 }
+
 blockquote {
   @apply text-ui-d0;
-  @apply dark:text-ui-l0;
+  @apply dark: text-ui-l0;
   @apply font-mono;
   @apply pl-4;
-  @apply py-2
-  @apply border-l-4;
+  @apply py-2 @apply border-l-4;
   @apply border-ui-l1;
 }
+
 /* HEADINGS */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   @apply font-extrabold;
   @apply text-ui-d0;
-  @apply dark:text-ui-l0;
+  @apply dark: text-ui-l0;
 }
+
 h1 {
   @apply text-5xl;
 }
+
 h2 {
   @apply pb-4;
   @apply pt-16;
   @apply text-3xl;
 }
+
 h3 {
   @apply pb-4;
   @apply pt-12;
   @apply text-2xl;
 }
+
 h4 {
   @apply pb-4;
   @apply pt-8;
@@ -55,6 +64,7 @@ table {
   @apply border;
   @apply border-ui-d1;
 }
+
 td {
   @apply h-8;
   @apply px-4;
@@ -62,6 +72,7 @@ td {
   @apply border-r;
   @apply border-ui-d1;
 }
+
 th {
   @apply h-8;
   @apply px-4;
@@ -78,10 +89,12 @@ input {
   @apply bg-ui-d1;
   @apply outline-none;
 }
+
 button {
-  @apply focus:outline-none;
+  @apply focus: outline-none;
   @apply rounded-lg;
 }
+
 select {
   @apply bg-ui-d0;
   @apply border;
@@ -89,6 +102,5 @@ select {
   @apply h-8;
   @apply px-8;
   @apply rounded-lg;
-  @apply focus:outline-none;
+  @apply focus: outline-none;
 }
-
