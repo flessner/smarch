@@ -36,19 +36,7 @@
       iconCompany={HeaderLogo}
       iconOpen={Menu}
       iconClose={Close}
-    >
-      <!--
-    <Layout slot="sidebar" class="pt-4 pb-8">
-      <Column class="pl-4 border-l-4 py-2 border-ui-d1">
-        {#each links as link}
-          <a href={link.href} class="text-ui-l0 font-bold">
-            {link.label}
-          </a>
-        {/each}
-      </Column>
-    </Layout>
-    -->
-    </Header>
+    />
   </div>
 
   <div class="w-full flex-grow">
@@ -60,6 +48,10 @@
       <Row class="flex-wrap justify-between h-full">
         <h3 class="p-0 pt-2 md:pt-0 my-auto">smarch</h3>
         <Row class="justify-between w-full md:w-1/3 px-2">
+          <a href="/" class="my-auto text-ui-d0">Blog</a>
+          <a href="/" class="my-auto text-ui-d0">Twitter</a>
+          <a href="/" class="my-auto text-ui-d0">Contact</a>
+          <!--
           <a href="discord.app" class="my-auto">
             <Discord class="text-ui-d0" />
           </a>
@@ -69,6 +61,7 @@
           <a href="medium.com" class="my-auto">
             <Medium class="text-ui-d0" />
           </a>
+          -->
         </Row>
       </Row>
     </Layout>

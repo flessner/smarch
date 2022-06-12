@@ -1,20 +1,17 @@
 <script>
   import { Layout, Row } from "carbon/svelte";
 
-  import ArrowUpRight24 from "carbon-icons-svelte/lib/ArrowUpRight24";
   import ArrowDown32 from "carbon-icons-svelte/lib/ArrowDown32";
 
-  const working = [
-    {
-      label: "DeviantDAO",
-      href: "https://deviant.finance",
-    },
-  ];
+  import Fade24 from "carbon-icons-svelte/lib/Fade24";
+  import ChartCandlestick24 from "carbon-icons-svelte/lib/ChartCandlestick24";
+  import Terminal24 from "carbon-icons-svelte/lib/Terminal24";
 </script>
 
+<!-- OVERVIEW -->
 <div class="overflow-hidden -mt-16">
   <Layout invert class="h-screen flex flex-col justify-center">
-    <h1 class="text-7xl text-center">Indexing the new Web</h1>
+    <h1 class="text-7xl text-center mb-12">Indexing the new Web</h1>
   </Layout>
 </div>
 
@@ -22,32 +19,50 @@
   <ArrowDown32 class="animate-bounce animate-duration-1000" />
 </Row>
 
+<!-- PRODUCTS -->
 <Layout class="pb-8">
-  <Layout narrow class="-ml-4 md:-ml-8">
-    <h2>Mission</h2>
-    <blockquote>
-      Building a better tomorrow by building better tools today.
-    </blockquote>
-    <p class="pt-8">
-      smarch is a community of developers and designers who are passionate about
-      the web3 ecosystem. We believe that the web3 ecosystem is the future of
-      the web and we want to make it a reality.
-      <br /><br />
-      The web3 ecosystem is a huge opportunity for developers to build more open,
-      efficient and beautiful tools.
-      <br /><br />
-      However, the gas prices are high, the security is low, the scalability is low,
-      the interoperability is low, and the ecosystem is still in its infancy. We
-      are hoping to make a mark on the web3 ecosystem by building better tools today.
-    </p>
-  </Layout>
-  <h2>Working on</h2>
-  {#each working as project}
-    <a href={project.href} target="_">
-      <Row class="h-16 mb-4 bg-ui-l1 rounded-lg justify-between">
-        <h3 class="py-0 px-6 my-auto">{project.label}</h3>
-        <ArrowUpRight24 class="mr-4 my-auto text-ui-d0" />
-      </Row>
-    </a>
-  {/each}
+  <h2>
+    <Fade24 class="mr-4" />Root
+    <span class="font-mono ml-2 text-base font-medium">
+      Blockchain Data Platform
+    </span>
+  </h2>
+  <p class="max-w-2xl">
+    Root leverages the huge amounts of the data on the blockchain and makes it
+    accessible to you. Querry and explore the blockchain like never before and
+    get the answers you need to bring your venture on the blockchain ahead.
+  </p>
+  <br />
+  <a href="/contact" class="text-ui-d0">Open Cloud -> </a>
+  <h2>
+    <ChartCandlestick24 class="mr-4" />Trade
+    <span class="font-mono ml-2 text-base font-medium">
+      On-Chain Trading System
+    </span>
+  </h2>
+  <p class="max-w-2xl">
+    Professional trading software that allows you to trade on the blockchain as
+    easy as if it was a centralized exchange. Streaming blockchain data and
+    running complex algorithms to make trading decisions for you.
+  </p>
+  <br />
+  <a href="/contact" class="text-ui-d0">Request Access -> </a>
+  <h2>
+    <Terminal24 class="mr-4" />Terminal
+    <span class="font-mono ml-2 text-base font-medium">
+      Enthusiast Dashboard
+    </span>
+  </h2>
+  <p class="max-w-2xl">
+    The terminal is the best entry point to everyone interacting with the
+    blockchain. It allows you to not only view your portfolio but also to trade
+    and invest in countless currencies and nfts while preserving
+    decentralization.
+  </p>
+  <br />
+  <a href="/contact" class="text-ui-d0">Open Terminal -></a>
+  <h3 class="pt-32">Ready to get started?</h3>
+  <p>Do you have an open problem where we can help or are you just curious?</p>
+  <br />
+  <a href="/contact" class="text-ui-d0">Contact Us -></a>
 </Layout>
