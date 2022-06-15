@@ -10,8 +10,9 @@ const config = {
   preprocess: preprocess(),
   kit: {
     adapter: adapter({}),
+    fallback: 'svelte',
     prerender: {
-      enabled: true,
+      default: true,
     },
     vite: {
       resolve: {
