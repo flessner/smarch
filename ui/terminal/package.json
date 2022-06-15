@@ -5,7 +5,7 @@
   },
   "scripts": {
     "dev": "svelte-kit dev -p 3003",
-    "build": "cd ../carbon && npm i && cd ../main && svelte-kit build",
+    "build": "cd ../carbon && npm i && cd ../terminal && svelte-kit build",
     "preview": "svelte-kit preview"
   },
   "dependencies": {
