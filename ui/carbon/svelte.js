@@ -5,7 +5,6 @@ import Layout from "./svelte/Layout.svelte"
 import Placeholder from "./svelte/Placeholder.svelte"
 import Product from "./svelte/Product.svelte"
 import Row from "./svelte/Row.svelte"
-import Select from "./svelte/Select.svelte"
 import Tab from "./svelte/Tab.svelte"
 import Title from "./svelte/Title.svelte"
 
@@ -17,7 +16,6 @@ export {
   Placeholder,
   Product,
   Row,
-  Select,
   Tab,
   Title
 }
