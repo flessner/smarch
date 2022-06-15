@@ -46,3 +46,27 @@ resource "digitalocean_app" "web_main" {
     }
   }
 }
+
+resource "digitalocean_app" "web_terminal" {
+  spec {
+    name   = "smarch-terminal"
+    region = "nyc"
+
+    domain {
+      name = "terminal.smarch.net"
+      type = "PRIMARY"
+    }
+
+    static_site {
+      name          = "main"
+      source_dir    = "/ui/terminal"
+      build_command = "npm run build"
+
+      github {
+        deploy_on_push = true
+        branch         = "master"
+        repo           = "flessner/smarch"
+      }
+    }
+  }
+}

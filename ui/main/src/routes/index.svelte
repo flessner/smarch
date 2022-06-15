@@ -33,7 +33,7 @@
     get the answers you need to bring your venture on the blockchain ahead.
   </p>
   <br />
-  <a href="/contact" class="text-ui-d0">Open Cloud -> </a>
+  <a href="https://cloud.smarch.net" class="text-ui-d0">Open Cloud -> </a>
   <h2>
     <ChartCandlestick24 class="mr-4" />Trade
     <span class="font-mono ml-2 text-base font-medium">
@@ -60,7 +60,7 @@
     decentralization.
   </p>
   <br />
-  <a href="/contact" class="text-ui-d0">Open Terminal -></a>
+  <a href="https://terminal.smarch.net" class="text-ui-d0">Open Terminal -></a>
   <h3 class="pt-32">Ready to get started?</h3>
   <p>Do you have an open problem where we can help or are you just curious?</p>
   <br />

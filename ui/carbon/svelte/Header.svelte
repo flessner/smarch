@@ -44,7 +44,7 @@
           {/if}
           <h4 class="select-none py-0 my-auto text-ui-l0 dark:text-ui-d0">
             {company}
-            <span class="font-mono ml-2px uppercase">{product}</span>
+            <span class="font-mono font-normal text-xl ml-4px">{product}</span>
           </h4>
         </Row>
       </a>
