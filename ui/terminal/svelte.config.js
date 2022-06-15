@@ -1,6 +1,5 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
-import { mdsvex } from 'mdsvex'
 
 import WindiCSS from 'vite-plugin-windicss'
 import path from 'path'
@@ -11,8 +10,6 @@ const config = {
   preprocess: preprocess(),
   kit: {
     adapter: adapter({}),
-    target: '#svelte',
-    ssr: false,
     prerender: {
       enabled: true,
     },
