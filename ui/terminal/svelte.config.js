@@ -9,8 +9,9 @@ const __dirname = path.resolve();
 const config = {
   preprocess: preprocess(),
   kit: {
-    adapter: adapter({}),
-    fallback: 'svelte',
+    adapter: adapter({
+      fallback: null,
+    }),
     prerender: {
       default: true,
     },
