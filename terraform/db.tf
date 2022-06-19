@@ -1,4 +1,7 @@
 resource "kubernetes_persistent_volume_claim" "test-pv" {
+  metadata {
+    name = "test-pv"
+  }
   spec {
     access_modes = ["ReadWriteOnce"]
     storage_class_name = "do-block-storage"
