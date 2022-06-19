@@ -31,7 +31,7 @@ resource "digitalocean_kubernetes_cluster" "cluster_kiwi" {
 
   node_pool {
     name       = "worker-pool"
-    size       = "s-2vcpu-2gb"
+    size       = "s-2vcpu-2gb-amd"
     node_count = 3
   }
 }
