@@ -35,21 +35,3 @@ resource "digitalocean_kubernetes_cluster" "cluster_kiwi" {
     node_count = 3
   }
 }
-
-provider "kubernetes" {
-  host             = digitalocean_kubernetes_cluster.cluster_kiwi.endpoint
-  token            = digitalocean_kubernetes_cluster.cluster_kiwi.kube_config[0].token
-  cluster_ca_certificate = base64decode(
-    digitalocean_kubernetes_cluster.cluster_kiwi.kube_config[0].cluster_ca_certificate
-  )
-}
-
-provider "helm" {
-  kubernetes {
-    host = digitalocean_kubernetes_cluster.cluster_kiwi.endpoint
-    cluster_ca_certificate = base64decode(
-      digitalocean_kubernetes_cluster.cluster_kiwi.kube_config[0].cluster_ca_certificate
-    )
-    token = digitalocean_kubernetes_cluster.cluster_kiwi.kube_config[0].token
-  }
-}
