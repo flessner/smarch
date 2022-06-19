@@ -7,12 +7,11 @@ resource "kubernetes_persistent_volume_claim" "test-pv" {
     storage_class_name = "do-block-storage"
     resources {
       requests = {
-        storage = "100Gi"
+        storage = "200Gi"
       }
     }
   }
 }
-
 
 resource "digitalocean_database_cluster" "redis_nyc" {
   name       = "smarch-redis"
