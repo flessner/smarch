@@ -1,9 +1,5 @@
 variable "DO_PAT" {}
 variable "CF_TOKEN" {}
-variable "PS_HOST" {}
-variable "PS_USER" {}
-variable "PS_PW" {}
-variable "PS_DB" {}
 
 terraform {
   required_providers {
@@ -21,6 +17,20 @@ terraform {
 provider "digitalocean" {
   token = var.DO_PAT
 }
+
 provider "cloudflare" {
   api_token = var.CF_TOKEN
+}
+
+resource "digitalocean_project" "project_smarch" {
+  name        = "smarch"
+  resources = [
+    digitalocean_app.web_cloud.id,
+    digitalocean_app.web_main.id,
+    digitalocean_app.web_terminal.id
+  ]
+}
+
+output "web-id" {
+  value = digitalocean_app.web_cloud.id
 }

@@ -5,8 +5,6 @@
   import { Header, Layout, Column, Row } from "carbon/svelte";
 
   import HeaderLogo from "carbon-icons-svelte/lib/ShapeJoin32";
-  import Menu from "carbon-icons-svelte/lib/Menu32";
-  import Close from "carbon-icons-svelte/lib/Close32";
 
   import Discord from "carbon-icons-svelte/lib/LogoDiscord32";
   import Medium from "carbon-icons-svelte/lib/LogoMedium32";
@@ -30,13 +28,7 @@
 
 <Column class="min-h-screen justify-between">
   <div class="dark">
-    <Header
-      company="smarch"
-      href="/"
-      iconCompany={HeaderLogo}
-      iconOpen={Menu}
-      iconClose={Close}
-    />
+    <Header company="smarch" href="/" iconCompany={HeaderLogo} />
   </div>
 
   <div class="w-full flex-grow">
