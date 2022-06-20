@@ -1,3 +1,6 @@
+variable "CB_USER" {}
+variable "CB_PASSWORD" {}
+
 resource "digitalocean_droplet" "cb_master" {
   image    = "docker-20-04"
   name     = "smarch-cb-master"
@@ -17,7 +20,7 @@ resource "digitalocean_droplet" "cb_master" {
   provisioner "remote-exec" {
     inline = [
       "sleep 10s",
-      "docker run -d --name db -p 8091-8096:8091-8096 -p 11210-11211:11210-11211 -v /mnt/smarch_cb:/opt/couchbase/var couchbase"
+      "docker run -d --name couchbase -p 8091-8096:8091-8096 -p 11210-11211:11210-11211 -v /mnt/smarch_cb:/opt/couchbase/var couchbase"
     ]
   }
 }
