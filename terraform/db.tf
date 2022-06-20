@@ -1,8 +1,16 @@
 resource "digitalocean_droplet" "cb-1" {
-  image  = "docker-20-04"
-  name   = "smarch-cb-1"
-  region = "fra1"
-  size   = "m-4vcpu-32gb"
+  image    = "docker-20-04"
+  name     = "smarch-cb-1"
+  region   = "fra1"
+  size     = "m-4vcpu-32gb"
+  ssh_keys = [digitalocean_ssh_key.default.fingerprint]
+
+  connection {
+    type = "ssh"
+    host = self.ipv4_address
+    user = "root"
+    private_key = tls_private_key.default.private_key_pem
+  }
 
   provisioner "remote-exec" {
     inline = [
@@ -18,9 +26,3 @@ resource "digitalocean_volume" "cb-1" {
   initial_filesystem_type  = "ext4"
   initial_filesystem_label = "cb"
 }
-
-resource "digitalocean_volume_attachment" "cb-1" {
-  droplet_id = digitalocean_droplet.cb-1.id
-  volume_id  = digitalocean_volume.cb-1.id
-}
-
