@@ -3,13 +3,14 @@ resource "digitalocean_droplet" "cb-1" {
   name     = "smarch-cb-1"
   region   = "fra1"
   size     = "m-4vcpu-32gb"
-  ssh_keys = [digitalocean_ssh_key.default.fingerprint]
+  ssh_keys = [ "${digitalocean_ssh_key.default.id}" ]
 
   connection {
     type = "ssh"
     host = self.ipv4_address
     user = "root"
-    private_key = tls_private_key.default.private_key_pem
+    timeout = "300"
+    private_key = "${tls_private_key.default.private_key_pem}"
   }
 
   provisioner "remote-exec" {
