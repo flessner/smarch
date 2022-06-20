@@ -3,7 +3,7 @@ resource "digitalocean_droplet" "cb" {
   name     = "smarch-cb"
   region   = "fra1"
   size     = "m-4vcpu-32gb"
-  volume_ids = [ digitalocean_volume.cb-1.id ]
+  volume_ids = [ digitalocean_volume.cb.id ]
   ssh_keys = [ digitalocean_ssh_key.default.id ]
 
   connection {
