@@ -1,4 +1,4 @@
-resource "digitalocean_app" "web_cloud" {
+resource "digitalocean_app" "cloud" {
   spec {
     name   = "smarch-cloud"
     region = "nyc"
@@ -23,7 +23,7 @@ resource "digitalocean_app" "web_cloud" {
   }
 }
 
-resource "digitalocean_app" "web_main" {
+resource "digitalocean_app" "main" {
   spec {
     name   = "smarch-web"
     region = "nyc"
@@ -47,7 +47,7 @@ resource "digitalocean_app" "web_main" {
   }
 }
 
-resource "digitalocean_app" "web_terminal" {
+resource "digitalocean_app" "terminal" {
   spec {
     name   = "smarch-terminal"
     region = "nyc"
