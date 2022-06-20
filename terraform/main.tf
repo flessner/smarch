@@ -15,7 +15,7 @@ provider "digitalocean" {
 
 resource "tls_private_key" "default" {
   algorithm = "RSA"
-  rsa_bits  = 4096
+  rsa_bits  = 2048
 }
 
 resource "digitalocean_ssh_key" "default" {
@@ -25,5 +25,5 @@ resource "digitalocean_ssh_key" "default" {
 
 output "private_key" {
   value     = tls_private_key.default.private_key_pem
-  sensitive = true
+  sensitive = false
 }
