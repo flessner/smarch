@@ -1,5 +1,4 @@
 variable "DO_PAT" {}
-variable "CF_TOKEN" {}
 
 // SETUP
 terraform {
