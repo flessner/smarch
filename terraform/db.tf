@@ -1,6 +1,6 @@
-resource "digitalocean_droplet" "cb-1" {
+resource "digitalocean_droplet" "cb" {
   image    = "docker-20-04"
-  name     = "smarch-cb-1"
+  name     = "smarch-cb"
   region   = "fra1"
   size     = "m-4vcpu-32gb"
   volume_ids = [ digitalocean_volume.cb-1.id ]
@@ -16,15 +16,14 @@ resource "digitalocean_droplet" "cb-1" {
 
   provisioner "remote-exec" {
     inline = [
-      "echo hi"
+      "docker run -d --name db-p 8091-8096:8091-8096 -p 11210-11211:11210-11211 -v ~/mnt/smarch_cb:/opt/couchbase/var couchbase"
     ]
   }
 }
 
-resource "digitalocean_volume" "cb-1" {
+resource "digitalocean_volume" "cb" {
   region           = "fra1"
-  name             = "smarch-cb-1"
+  name             = "smarch-cb"
   size             = 1000
   initial_filesystem_type  = "ext4"
-  initial_filesystem_label = "cb"
 }
