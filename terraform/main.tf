@@ -1,15 +1,6 @@
 variable "DO_PAT" {}
 
-// SETUP
 terraform {
-  cloud {
-    organization = "smarch"
-
-    workspaces {
-      name = "smarch"
-    }
-  }
-
   required_providers {
     digitalocean = {
       source  = "digitalocean/digitalocean"
