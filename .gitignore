@@ -21,3 +21,6 @@ worker
 # sql
 smarch.session.sql
 .env
+
+# .elixir
+/.elixir_ls
