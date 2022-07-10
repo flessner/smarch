@@ -1,6 +1,7 @@
 variable "RAMAS_USER" {}
 variable "RAMAS_PASSWORD" {}
 
+/*
 resource "digitalocean_droplet" "ramas_master" {
   image      = "docker-20-04"
   name       = "smarch-ramas-master"
@@ -31,3 +32,4 @@ resource "digitalocean_volume" "ramas_master" {
   size                    = 1000
   initial_filesystem_type = "ext4"
 }
+*/

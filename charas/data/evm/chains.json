@@ -1,0 +1,27 @@
+{
+  "ETH": {
+    "name": "Ethereum Mainnet",
+    "rpc": "https://cloudflare-eth.com",
+    "chainId": 1
+  },
+  "BSC": {
+    "name": "Binance Smart Chain Mainnet",
+    "rpc": "https://bsc-dataseed1.binance.org",
+    "chainId": 56
+  },
+  "POLYGON": {
+    "name": "Polygon Mainnet",
+    "rpc": "https://polygon-rpc.com/",
+    "chainId": 137
+  },
+  "FTM": {
+    "name": "Fantom Opera",
+    "rpc": "https://rpc.ftm.tools",
+    "chainId": 250
+  },
+  "AVAXC": {
+    "name": "Avalanche C-Chain",
+    "rpc": "https://api.avax.network/ext/bc/C/rpc",
+    "chainId": 43114
+  }
+}

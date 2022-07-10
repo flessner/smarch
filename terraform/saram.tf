@@ -1,3 +1,4 @@
+/*
 resource "digitalocean_database_cluster" "saram" {
   name       = "smarch-saram"
   engine     = "redis"
@@ -6,3 +7,4 @@ resource "digitalocean_database_cluster" "saram" {
   region     = "fra1"
   node_count = 1
 }
+*/

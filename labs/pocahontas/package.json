@@ -1,7 +1,6 @@
 {
-  "name": "smarch-heartchain",
+  "name": "smarch-pocahontas",
   "version": "1.0.0",
-  "type": "module",
   "engines": {
     "node": "^17.0.0"
   },
@@ -12,10 +11,14 @@
   "scripts": {
     "start": "node build/src/main.js",
     "build": "tsc -p tsconfig.json",
-    "dev": "tsc -w -p tsconfig.json"
+    "dev": "nodemon src/main.ts"
   },
   "dependencies": {
     "ethers": "^5.6.5",
-    "evm": "^0.2.0"
+    "events": "^3.3.0",
+    "evm": "^0.2.0",
+    "graphology": "^0.24.1",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1"
   }
 }
